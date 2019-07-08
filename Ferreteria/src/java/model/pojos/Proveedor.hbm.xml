@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 8/07/2019 12:36:24 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.pojos.Proveedor" table="PROVEEDOR" catalog="kr1vvkff88lirob4" optimistic-lock="version">
+        <id name="nitProveedor" type="long">
+            <column name="NIT_PROVEEDOR" precision="10" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="nombreProveedor" type="string">
+            <column name="NOMBRE_PROVEEDOR" length="30" />
+        </property>
+        <property name="emailProveedor" type="string">
+            <column name="EMAIL_PROVEEDOR" length="30" />
+        </property>
+        <property name="telefonoProveedor" type="java.lang.Long">
+            <column name="TELEFONO_PROVEEDOR" precision="10" scale="0" />
+        </property>
+        <set name="facturas" table="FACTURA" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="NIT_PROVEEDOR" precision="10" scale="0" />
+            </key>
+            <one-to-many class="model.pojos.Factura" />
+        </set>
+        <set name="precios" table="PRECIO" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="NIT_PROVEEDOR" precision="10" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="model.pojos.Precio" />
+        </set>
+    </class>
+</hibernate-mapping>
