@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
     this.loginService.loginEmailUSer(this.email, this.password)
     .then((res) => {
       this.router.navigate(['home']);
-    }).catch(err => console.log('err', err.message));
+    }).catch(err => alert(err.message));
   }
 
   onLogOut() {
