@@ -9,35 +9,14 @@
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
-<section id="login" class="mb-5 mt-5">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-6 col-md-4 mx-auto">
-        <div class="card_login">
-          <div class="card">
-            <div class="card-body text-center">
-              <form #formLogin="ngForm" (submit)="onLogin()">
-                <h1 class="h3 mb-3 font-weight-normal" *ngIf="!isError">Ingreso</h1>
-                <div class="alert alert-danger" role="alert" *ngIf="isError">
-                  Something is wrong!
-                </div>
-                <div class="form-group">
-                  <input [(ngModel)]="email" type="email" id="email" name="email" class="form-control"
-                    placeholder="Correo Electronico" required>
-                </div>
-                <div class="form-group">
-                  <input [(ngModel)]="password" type="password" id="password" name="password" class="form-control"
-                    placeholder="Contraseña" required>
-                </div>
-                <button type="submit" class="btn btn-lg btn-primary btn-block">Ingresar</button>
-                <div class="form-group">
-                  <a routerLink="/user/register" class="form-control login-user">Registrate</a>
-                </div>
+<div>
+  <i class="fa fa-heart"></i> <a routerLink="login">Iniciar Sesion</a>
+</div>
 
 <body>
 
 
- 
+
 </body>
 
 <router-outlet></router-outlet>
