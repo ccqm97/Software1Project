@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   onLogIn() {
     this.loginService.loginEmailUSer(this.email, this.password)
     .then((res) => {
-      this.router.navigate(['home']);
+      this.router.navigate(['register']);
     }).catch(err => alert('Datos Erroneos'));
   }
 
