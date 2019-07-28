@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { CrudService } from '../../services/crud.service';
+import { Router } from '@angular/router';
+import { Persona } from '../../model/Persona';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +10,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  personas: Persona[];
+
+  constructor(private crud: CrudService, private router: Router) { }
 
   ngOnInit() {
+    this.crud.getPersonas()
+      .subscribe(data => {
+        this.personas = data;
+      });
+
+   }
+
+  list() {
+    alert('sd');
   }
 
+  save(persona: Persona) {
+    this.crud.createPersona(persona)
+    .subscribe(data => {
+      alert('se agrego');
+    });
+  }
 }

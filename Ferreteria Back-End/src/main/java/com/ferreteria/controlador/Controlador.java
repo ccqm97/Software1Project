@@ -5,8 +5,9 @@
  */
 package com.ferreteria.controlador;
 
-import com.ferreteria.ferreteria.Producto;
-import com.ferreteria.services.ProductoService;
+import com.ferreteria.ferreteria.Persona;
+import com.ferreteria.services.PersonaService;
+import com.ferreteria.services.PersonaService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -19,16 +20,16 @@ import org.springframework.web.bind.annotation.RestController;
  * @author oscar
  */
 
-@CrossOrigin(origins = "http://localhost:4200/home", maxAge = 3600)
+@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 @RestController
-@RequestMapping({"/producto"})
+@RequestMapping({"/personas"})
 public class Controlador {
     
     @Autowired
-    ProductoService ps;
+    PersonaService ps;
     
     @GetMapping
-    public List<Producto> listar(){
+    public List<Persona> listar(){
         return ps.list();
     }
 }

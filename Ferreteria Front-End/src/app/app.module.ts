@@ -9,6 +9,8 @@ import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from './components/register/register.component';
+import { CrudService } from './services/crud.service';
+import { HttpClientModule } from '@angular/common/http';
 
 const config = {
   apiKey: 'AIzaSyAFyCq73g0Gtl_AjMmT76uWU6g8LwMrERk',
@@ -29,9 +31,10 @@ const config = {
     AppRoutingModule,
     AngularFireAuthModule,
     AngularFireModule.initializeApp(config),
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [CrudService],
   bootstrap: [AppComponent]
 })
 
