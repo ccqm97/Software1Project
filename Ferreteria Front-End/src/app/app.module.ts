@@ -10,8 +10,12 @@ import { HomeComponent } from './components/home/home.component';
 import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from './components/register/register.component';
 import { CrudService } from './services/crud.service';
+import { CrudProveedorService } from './services/crud-proveedor.service';
 import { HttpClientModule } from '@angular/common/http';
-import { StructureComponent } from './components/structure/structure.component';
+import { CrearProveedorComponent } from './components/proveedores/crear-proveedor/crear-proveedor.component';
+import { MostarProveedorComponent } from './components/proveedores/mostar-proveedor/mostar-proveedor.component';
+import { EditarProveedorComponent } from './components/proveedores/editar-proveedor/editar-proveedor.component';
+import { EliminarProveedorComponent } from './components/proveedores/eliminar-proveedor/eliminar-proveedor.component';
 
 const config = {
   apiKey: 'AIzaSyAFyCq73g0Gtl_AjMmT76uWU6g8LwMrERk',
@@ -26,7 +30,10 @@ const config = {
     LoginComponent,
     HomeComponent,
     RegisterComponent,
-    StructureComponent
+    CrearProveedorComponent,
+    MostarProveedorComponent,
+    EditarProveedorComponent,
+    EliminarProveedorComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +43,7 @@ const config = {
     FormsModule,
     HttpClientModule
   ],
-  providers: [CrudService],
+  providers: [CrudService,CrudProveedorService],
   bootstrap: [AppComponent]
 })
 

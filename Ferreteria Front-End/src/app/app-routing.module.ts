@@ -3,16 +3,21 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { RegisterComponent } from './components/register/register.component';
-import { StructureComponent } from './components/structure/structure.component';
+import { CrearProveedorComponent } from './components/proveedores/crear-proveedor/crear-proveedor.component';
+import { MostarProveedorComponent } from './components/proveedores/mostar-proveedor/mostar-proveedor.component';
+import { EditarProveedorComponent } from './components/proveedores/editar-proveedor/editar-proveedor.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'home', component: HomeComponent},
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent},
-  { path: 'structure', component: StructureComponent}
-];
+  { path: 'agregarProveedor', component: CrearProveedorComponent},
+  { path: 'mostrarProveedores', component: MostarProveedorComponent},
+  { path: 'editarProveedor', component: EditarProveedorComponent}
 
+
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)
