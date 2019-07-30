@@ -11,27 +11,32 @@
 
     <body>
 
-       
+        <div class="row">
+            <div class="col" ><!--<app-structure></app-structure>--></div>
+            <div class="col-6">
+                <table class="table table-bordered" style="align-content: right;">
+                    <tr style="background-color: royalblue; text-decoration-color: white">
+                        <th class="text-center">Codigo</th>
+                        <th class="text-center">Nombre</th>
+                        <th class="text-center">Cantidad</th>
+                        <th class="text-center">Opciones</th>
+                    </tr>
+                    <tr *ngFor="let persona of personas">
+                        <td class="text-center">{{persona.idPersona}}</td>
+                        <td class="text-center">{{persona.edad}}</td>
+                        <td class="text-center"></td>
+                        <td class="text-center">
+                            <button>Opcion1</button>
+                            <button>Editar</button>
+                            <button>Eliinar</button>
+                        </td>
+                
+                    </tr>
+                </table>
+            </div>
+
+        </div>
         
-        <table class="table table-bordered">
-            <tr style="background-color: royalblue; text-decoration-color: white">
-                <th class="text-center">Codigo</th>
-                <th class="text-center">Nombre</th>
-                <th class="text-center">Cantidad</th>
-                <th class="text-center">Opciones</th>
-            </tr>
-            <tr *ngFor="let persona of personas">
-                <td class="text-center">{{persona.idPersona}}</td>
-                <td class="text-center">{{persona.edad}}</td>
-                <td class="text-center"></td>
-                <td class="text-center">
-                    <button>Opcion1</button>
-                    <button>Editar</button>
-                    <button>Eliinar</button>
-                </td>
-        
-            </tr>
-        </table>
 
     </body>
 </html>
