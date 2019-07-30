@@ -16,7 +16,7 @@ public interface PersonaService {
     
     List<Persona> list();    
     Persona listId(long id);
-    Persona add(Persona producto);
-    Persona edit(Persona producto);
+    Persona add(Persona persona);
+    Persona edit(Persona personas);
     Persona delete(long id);
 }

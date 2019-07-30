@@ -1,0 +1,31 @@
+<div class="container">
+  <h1>Proveedores</h1>
+  <div class="card">
+    <!--Table-->
+    <table class="table table-striped w-auto">
+      <!--Table head-->
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>NIT</th>
+          <th>Nombre</th>
+          <th>Opciones</th>
+        </tr>
+      </thead>
+      <!--Table body-->
+      <tbody>
+        <tr *ngFor="let proveedor of Proveedores" class="text-center">
+            <td class="text-center">{{proveedor.nitProveedor}}</td>
+            <td class="text-center">{{proveedor.nombreProveedor}}</td>
+            <td class="text-center"></td>
+            <td class="text-center">
+              <button (click)="verInfoProveedor(proveedor)" class="btn btn-info">Ver </button>
+              <button (click)="editarProveedor(proveedor)" class="btn btn-primary">Editar</button>
+              <button (click)="eliminarProveedor(proveedor)" class="btn btn-danger">Eliminar</button>
+        </tr>
+      </tbody>
+
+    </table>
+    <!--Table-->
+  </div>
+</div>

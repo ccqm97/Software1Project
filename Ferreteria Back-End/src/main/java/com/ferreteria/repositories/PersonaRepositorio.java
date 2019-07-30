@@ -7,14 +7,17 @@ package com.ferreteria.repositories;
 
 import com.ferreteria.ferreteria.Persona;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.Repository;
 
 /**
  *
  * @author oscar
  */
+
 public interface PersonaRepositorio extends Repository<Persona, Integer> {
     
+       
     List<Persona> findAll();
     Persona findOne(long id);
     Persona save(Persona p);

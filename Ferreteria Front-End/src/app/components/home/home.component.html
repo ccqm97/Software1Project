@@ -1,45 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <title>Usuario</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    </head>
+<head>
+    <title>Usuario</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
 
-    <body>
-
-        <form #formLogin="ngForm" (submit)="save()">
+<body>
+    <form #formLogin="ngForm" (submit)="save()">
         <div class="form-group">
-                <input class="form-control" required>
-              </div>
-              <div class="form-group">
-                <input class="form-control" required>
-              </div>
-            <button type="submit" class="btn-success" >Agregar</button>
-        </form>
-        
-        <table class="table table-bordered">
-            <tr style="background-color: royalblue; text-decoration-color: white">
-                <th class="text-center">Codigo</th>
-                <th class="text-center">Nombre</th>
-                <th class="text-center">Cantidad</th>
-                <th class="text-center">Opciones</th>
-            </tr>
-            <tr *ngFor="let persona of personas">
-                <td class="text-center">{{persona.idPersona}}</td>
-                <td class="text-center">{{persona.edad}}</td>
-                <td class="text-center"></td>
-                <td class="text-center">
-                    <button>Opcion1</button>
-                    <button>Editar</button>
-                    <button>Eliinar</button>
-                </td>
-        
-            </tr>
-        </table>
+            <input class="form-control" required>
+        </div>
+        <div class="form-group">
+            <input class="form-control" required>
+        </div>
+        <button type="submit" class="btn-success">Agregar</button>
+    </form>
 
-    </body>
+    <table class="table table-bordered">
+        <tr style="background-color: royalblue; text-decoration-color: white">
+            <th class="text-center">Codigo</th>
+            <th class="text-center">Nombre</th>
+            <th class="text-center">Cantidad</th>
+            <th class="text-center">Opciones</th>
+        </tr>
+        <tr *ngFor="let persona of personas">
+            <td class="text-center">{{persona.idPersona}}</td>
+            <td class="text-center">{{persona.edad}}</td>
+            <td class="text-center"></td>
+            <td class="text-center">
+                <button>Opcion1</button>
+                <button>Editar</button>
+                <button>Eliinar</button>
+            </td>
+
+        </tr>
+    </table>
+
+</body>
+
 </html>

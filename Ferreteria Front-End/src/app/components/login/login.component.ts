@@ -19,9 +19,9 @@ export class LoginComponent implements OnInit {
 
   onLogIn() {
     this.loginService.loginEmailUSer(this.email, this.password)
-    .then((res) => {
+    .then((_res) => {
       this.router.navigate(['home']);
-    }).catch(err => alert('Datos Erroneos'));
+    }).catch(_mensajeError => alert('Datos Erroneos'));
   }
 
   onLogOut() {
