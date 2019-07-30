@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from './components/register/register.component';
 import { CrudService } from './services/crud.service';
 import { HttpClientModule } from '@angular/common/http';
+import { StructureComponent } from './components/structure/structure.component';
 
 const config = {
   apiKey: 'AIzaSyAFyCq73g0Gtl_AjMmT76uWU6g8LwMrERk',
@@ -24,7 +25,8 @@ const config = {
     AppComponent,
     LoginComponent,
     HomeComponent,
-    RegisterComponent
+    RegisterComponent,
+    StructureComponent
   ],
   imports: [
     BrowserModule,
