@@ -11,7 +11,7 @@ export class CrudService {
 
   constructor(private http: HttpClient) { }
 
-  Url = 'http://localhost:8081/demo/personas';
+  Url = 'http://localhost:8083/Ferreteria/personas';
 
   getPersonas() {
     return this.http.get<Persona[]>(this.Url);
@@ -20,4 +20,5 @@ export class CrudService {
   createPersona(persona: Persona) {
     return this.http.post<Persona>(this.Url, persona);
   }
+
 }

@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author oscar
  */
 
-@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
+@CrossOrigin(origins = "http://localhost:4200/home", maxAge = 3600)
 @RestController
 @RequestMapping({"/personas"})
 public class Controlador {
