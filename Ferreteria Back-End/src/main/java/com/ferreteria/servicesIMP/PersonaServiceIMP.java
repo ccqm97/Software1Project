@@ -18,7 +18,7 @@ import org.springframework.stereotype.Service;
  */
 
 @Service
-public class PersonaSercviceIMP implements PersonaService{
+public class PersonaServiceIMP implements PersonaService{
     @Autowired
     private PersonaRepositorio pr;
     
