@@ -1,0 +1,25 @@
+<div class="container col-md-6">
+  <div class="card">
+    <div class="card-header">
+      <h3>Editar Producto</h3>
+    </div>
+    <div class="card-body">
+      <form action="">
+        <div class="form-group">
+          <label for="">Codigo del Producto</label>
+          <input [(ngModel)]="producto.idProducto" name="idProducto" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="">Nombre del Producto</label>
+          <input [(ngModel)]="producto.nombreProducto" name="nombreProducto" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="">Descripcion del Producto</label>
+          <input [(ngModel)]="producto.descripcion" name="descripcionProducto" type="text" class="form-control">
+        </div>
+        <button (click)="cancelar()" class="btn btn-danger">Cancelar</button>
+        <button (click)="actualizarProducto(producto)" class="btn btn-success" style="margin-left: 10px">Actualizar</button>
+      </form>
+    </div>
+  </div>
+</div>

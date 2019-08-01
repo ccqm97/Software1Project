@@ -15,7 +15,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { CrearProveedorComponent } from './components/proveedores/crear-proveedor/crear-proveedor.component';
 import { MostarProveedorComponent } from './components/proveedores/mostar-proveedor/mostar-proveedor.component';
 import { EditarProveedorComponent } from './components/proveedores/editar-proveedor/editar-proveedor.component';
-import { EliminarProveedorComponent } from './components/proveedores/eliminar-proveedor/eliminar-proveedor.component';
+import { CrearProductoComponent } from './components/producto/crear-producto/crear-producto.component';
+import { EditarProductoComponent } from './components/producto/editar-producto/editar-producto.component';
+import { MostrarProductosComponent } from './components/producto/mostrar-productos/mostrar-productos.component';
+import { CrudProductoService } from './services/crud-producto.service';
 
 const config = {
   apiKey: 'AIzaSyAFyCq73g0Gtl_AjMmT76uWU6g8LwMrERk',
@@ -33,7 +36,9 @@ const config = {
     CrearProveedorComponent,
     MostarProveedorComponent,
     EditarProveedorComponent,
-    EliminarProveedorComponent
+    CrearProductoComponent,
+    EditarProductoComponent,
+    MostrarProductosComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +48,7 @@ const config = {
     FormsModule,
     HttpClientModule
   ],
-  providers: [CrudService,CrudProveedorService],
+  providers: [CrudService,CrudProveedorService,CrudProductoService],
   bootstrap: [AppComponent]
 })
 

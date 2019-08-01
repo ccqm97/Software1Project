@@ -1,5 +1,3 @@
-import { Asesor } from './asesor';
-
 export class Proveedor {
 
     nitProveedor: number;
