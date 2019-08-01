@@ -1,4 +1,4 @@
-package com.ferreteria.ferreteria;
+package com.ferreteriaUniversal.ferreteria;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -6,23 +6,24 @@
     <div class="card-body">
       <form action="">
         <div class="form-group">
-          <label for="">Nit</label>
-          <input type="text" class="form-control">
+          <label  for="">Nit</label>
+          <input [(ngModel)]="proveedor.nitProveedor" name="nitProveedor" type="text" class="form-control">
         </div>
         <div class="form-group">
           <label for="">Nombre</label>
-          <input type="text" class="form-control">
+          <input [(ngModel)]="proveedor.nombreProveedor" name="nombreProveedor" type="text" class="form-control">
         </div>
         <div class="form-group">
-          <label for="">Correo Electronico</label>
-          <input type="text" class="form-control">
+          <label for="">Correo</label>
+          <input [(ngModel)]="proveedor.correoProveedor" name="correoProveedor" type="text" class="form-control">
         </div>
         <div class="form-group">
-          <label for="">Telefonos</label>
-          <input type="text" class="form-control">
+          <label for="">Telefono</label>
+          <input [(ngModel)]="proveedor.telefonoProveedor" name="telefonoProveedor" type="text" class="form-control">
         </div>
-        <button (click)="actualizarProveedor()" class="btn btn-danger">Actualizar</button>
-      </form>
+          <button (click)="cancelar()" class="btn btn-danger">Cancelar</button>
+          <button (click)="actualizarProveedor(proveedor)" class="btn btn-success" style="margin-left: 10px">Actualizar</button>
+        </form>
     </div>
   </div>
 </div>

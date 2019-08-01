@@ -4,8 +4,7 @@ export class Proveedor {
 
     nitProveedor: number;
     nombreProveedor: string;
-    listaDeAsesores: Asesor;
     correoProveedor: string;
-    telefono: number;
+    telefonoProveedor: number;
 
 }

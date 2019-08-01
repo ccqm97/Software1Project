@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.ferreteria.repositories;
+package com.ferreteriaUniversal.ferreteria.repositorio;
 
-import com.ferreteria.ferreteria.Proveedor;
+import com.ferreteriaUniversal.ferreteria.model.Proveedor;
 import java.util.List;
 import org.springframework.data.repository.Repository;
 
@@ -15,11 +15,8 @@ import org.springframework.data.repository.Repository;
  */
 public interface ProveedorRepositorio extends Repository <Proveedor , Integer> {
     
-       
     List<Proveedor> findAll();
-    Proveedor findOne(long id);
-    Proveedor save(Proveedor p);
-    Proveedor edit(Proveedor p);
-    Proveedor delete(long id);
-    
+    Proveedor findOne(int id);
+    Proveedor save(Proveedor proveedor);
+    void delete(Proveedor proveedor);
 }

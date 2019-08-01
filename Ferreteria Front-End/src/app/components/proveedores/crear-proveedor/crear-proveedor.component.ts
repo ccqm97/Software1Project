@@ -9,17 +9,22 @@ import { Proveedor } from '../../../model/Proveedor';
   styleUrls: ['./crear-proveedor.component.css']
 })
 export class CrearProveedorComponent implements OnInit {
-  [x: string]: any;
 
   constructor(private router:Router, private sevice:CrudProveedorService) { }
+
+  proveedor: Proveedor = new Proveedor();
 
   ngOnInit() {
   }
 
-  guardarProveedor(proveedor:Proveedor){
-    this.CrudProveedorService.createProveedor(proveedor).subscribe(data=>{
-      alert("Se agrego el nuevo proveedor correctamente")
-      this.router.navigate(["listaDeProveedores"]);
+  guardarProveedor(){
+    this.sevice.guardarProveedor(this.proveedor)
+    .subscribe(data=>{
+      this.router.navigate(["mostrarProveedores"]);
     });
+  }
+
+  cancelar(){
+    this.router.navigate(["mostrarProveedores"]);
   }
 }

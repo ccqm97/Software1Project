@@ -1,30 +1,32 @@
 <div class="container">
-  <h1>Proveedores</h1>
+  <h1 class="text-center">Proveedores</h1>
+  <button  (click)="crear()" class="btn btn-success">Agregar Proveedor</button>
+
   <div class="card">
     <!--Table-->
     <table class="table table-striped w-auto">
       <!--Table head-->
-      <thead>
+      <thead class="text-center">
         <tr>
-          <th>#</th>
           <th>NIT</th>
           <th>Nombre</th>
+          <th>Correo</th>
+          <th>Telefono</th>
           <th>Opciones</th>
         </tr>
       </thead>
       <!--Table body-->
       <tbody>
-        <tr *ngFor="let proveedor of Proveedores" class="text-center">
+        <tr *ngFor="let proveedor of proveedores" class="text-center">
             <td class="text-center">{{proveedor.nitProveedor}}</td>
             <td class="text-center">{{proveedor.nombreProveedor}}</td>
-            <td class="text-center"></td>
+            <td class="text-center">{{proveedor.correoProveedor}}</td>
+            <td class="text-center">{{proveedor.telefonoProveedor}}</td>
             <td class="text-center">
-              <button (click)="verInfoProveedor(proveedor)" class="btn btn-info">Ver </button>
               <button (click)="editarProveedor(proveedor)" class="btn btn-primary">Editar</button>
               <button (click)="eliminarProveedor(proveedor)" class="btn btn-danger">Eliminar</button>
         </tr>
       </tbody>
-
     </table>
     <!--Table-->
   </div>

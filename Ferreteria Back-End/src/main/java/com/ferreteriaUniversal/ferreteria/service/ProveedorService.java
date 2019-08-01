@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.ferreteria.services;
+package com.ferreteriaUniversal.ferreteria.service;
 
-import com.ferreteria.ferreteria.Proveedor;
+import com.ferreteriaUniversal.ferreteria.model.Proveedor;
 import java.util.List;
 /**
  *
@@ -14,8 +14,8 @@ import java.util.List;
 public interface ProveedorService {
     
     List<Proveedor> list();    
-    Proveedor listNIT(long id);
+    Proveedor listNIT(int id);
     Proveedor add(Proveedor proveedor);
     Proveedor edit(Proveedor proveedor);
-    Proveedor delete(long id);
+    Proveedor delete(int id);
 }

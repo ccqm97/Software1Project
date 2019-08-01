@@ -25,12 +25,17 @@ export class EditarProveedorComponent implements OnInit {
     })
   }
 
-  actualizarProveedor(proveedor:Proveedor ){
+  actualizarProveedor(proveedor:Proveedor){
     this.service.updateProveedor(proveedor)
     .subscribe(data=>{
       this.proveedor = data;
       alert("Se actualizo el proveedor");
-      this.router.navigate(["mostrarProveedores"])
+      this.router.navigate(["mostrarProveedores"]);
   });
   }
+  
+  cancelar(){
+    this.router.navigate(["mostrarProveedores"]);
+  }
+
 }

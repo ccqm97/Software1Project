@@ -1,4 +1,4 @@
-package com.ferreteria.ferreteria;
+package com.ferreteriaUniversal.ferreteria;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

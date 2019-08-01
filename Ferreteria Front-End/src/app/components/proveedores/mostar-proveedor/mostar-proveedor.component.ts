@@ -14,21 +14,30 @@ export class MostarProveedorComponent implements OnInit {
   constructor(private service:CrudProveedorService, private router:Router) { }
 
   ngOnInit() {
+    this.service.getProveedores()
+    .subscribe(data=>{
+      this.proveedores=data;
+    })
   }
 
   editarProveedor(proveedor:Proveedor){
     localStorage.setItem("nitProveedor", proveedor.nitProveedor.toString());
-    this.router.navigate(["editarProveedor"])
+    this.router.navigate(["editarProveedor"]);
   }
 
   verInfoProveedor(proveedor:Proveedor){
     localStorage.setItem("nitProveedor", proveedor.nitProveedor.toString());
-    this.router.navigate(["verInfoProveedor"])
+    this.router.navigate(["verInfoProveedor"]);
   }
 
   eliminarProveedor(proveedor:Proveedor){
-
+    this.service.deleteProveedor(proveedor)
+    .subscribe(data=>{
+      this.proveedores=this.proveedores.filter(p=>p!==proveedor);
+    });
   }
 
-
+  crear(){
+    this.router.navigate(["agregarProveedor"]);
+  }
 }
