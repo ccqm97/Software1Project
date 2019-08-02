@@ -9,6 +9,9 @@ import { EditarProveedorComponent } from './components/proveedores/editar-provee
 import { CrearProductoComponent } from './components/producto/crear-producto/crear-producto.component';
 import { EditarProductoComponent } from './components/producto/editar-producto/editar-producto.component';
 import { MostrarProductosComponent } from './components/producto/mostrar-productos/mostrar-productos.component';
+import { MostrarFacturaComponent } from './components/factura/mostrar-factura/mostrar-factura.component';
+import { EditarFacturaComponent } from './components/factura/editar-factura/editar-factura.component';
+import { CrearFacturaComponent } from './components/factura/crear-factura/crear-factura.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -20,7 +23,11 @@ const routes: Routes = [
   { path: 'editarProveedor', component: EditarProveedorComponent},
   { path: 'agregarProducto', component: CrearProductoComponent},
   { path: 'mostrarProductos', component: MostrarProductosComponent},
-  { path: 'editarProducto', component: EditarProductoComponent}
+  { path: 'editarProducto', component: EditarProductoComponent},
+  { path: 'mostrarFacturas', component: MostrarFacturaComponent},
+  { path: 'editarFactura', component: EditarFacturaComponent},
+  { path: 'agregarFactura', component: CrearFacturaComponent}
+
 ];
 
 @NgModule({

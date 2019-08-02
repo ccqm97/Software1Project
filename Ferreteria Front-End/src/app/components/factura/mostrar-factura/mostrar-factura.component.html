@@ -1,0 +1,30 @@
+<div class="container">
+  <h1 class="text-center">Facturas</h1>
+  <button  (click)="crear()" class="btn btn-success">Agregar Factura</button>
+  <div class="card">
+    <!--Table-->
+    <table class="table table-striped w-auto">
+      <!--Table head-->
+      <thead class="text-center">
+        <tr>
+          <th>Id Factura</th>
+          <th>Codigo Factura Proveedor</th>
+          <th>Fecha</th>
+          <th>Opciones</th>
+        </tr>
+      </thead>
+      <!--Table body-->
+      <tbody>
+        <tr *ngFor="let factura of facturas" class="text-center">
+            <td class="text-center">{{factura.idFactura}}</td>
+            <td class="text-center">{{factura.idFacturaProveedor}}</td>
+            <td class="text-center">{{factura.fechaFactura}}</td>
+            <td class="text-center">
+              <button (click)="editarFactura(factura)" class="btn btn-primary">Editar</button>
+              <button (click)="eliminarFactura(factura)" class="btn btn-danger">Eliminar</button>
+        </tr>
+      </tbody>
+    </table>
+    <!--Table-->
+  </div>
+</div>

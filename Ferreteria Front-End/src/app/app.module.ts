@@ -19,6 +19,10 @@ import { CrearProductoComponent } from './components/producto/crear-producto/cre
 import { EditarProductoComponent } from './components/producto/editar-producto/editar-producto.component';
 import { MostrarProductosComponent } from './components/producto/mostrar-productos/mostrar-productos.component';
 import { CrudProductoService } from './services/crud-producto.service';
+import { EditarFacturaComponent } from './components/factura/editar-factura/editar-factura.component';
+import { MostrarFacturaComponent } from './components/factura/mostrar-factura/mostrar-factura.component';
+import { CrudFacturaService } from './services/crud-factura.service';
+import { CrearFacturaComponent } from './components/factura/crear-factura/crear-factura.component';
 
 const config = {
   apiKey: 'AIzaSyAFyCq73g0Gtl_AjMmT76uWU6g8LwMrERk',
@@ -38,7 +42,10 @@ const config = {
     EditarProveedorComponent,
     CrearProductoComponent,
     EditarProductoComponent,
-    MostrarProductosComponent
+    MostrarProductosComponent,
+    EditarFacturaComponent,
+    MostrarFacturaComponent,
+    CrearFacturaComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +55,10 @@ const config = {
     FormsModule,
     HttpClientModule
   ],
-  providers: [CrudService,CrudProveedorService,CrudProductoService],
+  providers: [CrudService,
+    CrudProveedorService,
+    CrudProductoService,
+    CrudFacturaService],
   bootstrap: [AppComponent]
 })
 

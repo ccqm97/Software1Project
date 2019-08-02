@@ -29,7 +29,7 @@ export class EditarProductoComponent implements OnInit {
     this.service.updateProducto(producto)
     .subscribe(data=>{
       this.producto = data;
-      alert("Se actualizo el proveedor");
+      alert("Se actualizo el Productor");
       this.router.navigate(["mostrarProductos"]);
   });
   }

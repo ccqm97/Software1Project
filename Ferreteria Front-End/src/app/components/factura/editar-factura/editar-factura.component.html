@@ -1,0 +1,25 @@
+<div class="container col-md-6">
+  <div class="card">
+    <div class="card-header">
+      <h3>Editar Factura</h3>
+    </div>
+    <div class="card-body">
+      <form action="">
+          <div class="form-group">
+              <label for="">Identificador de la Factura</label>
+              <input [(ngModel)]="factura.idFactura" name="idFactura" type="text" class="form-control" disabled>
+            </div>
+        <div class="form-group">
+          <label for="">Identificador de la Factura de Proveedor</label>
+          <input [(ngModel)]="factura.idFacturaProveedor" name="idFacturaProveedor" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="">Fecha</label>
+          <input [(ngModel)]="factura.fechaFactura" name="fechaFactura" type="date" class="form-control">
+        </div>
+        <button (click)="cancelar()" class="btn btn-danger">Cancelar</button>
+        <button (click)="actualizarFactura(factura)" class="btn btn-success" style="margin-left: 10px">Actualizar</button>
+      </form>
+    </div>
+  </div>
+</div>
