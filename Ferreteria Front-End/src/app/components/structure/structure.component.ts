@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RouterModule, Router } from '@angular/router';
 
 @Component({
   selector: 'app-structure',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StructureComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
+  productos() {
+    this.router.navigate(['mostrarProductos']);
+  }
+
+  proveedores() {
+    this.router.navigate(['mostrarProveedores']);
+  }
+
+  facturas() {
+    this.router.navigate(['mostrarFacturas']);
+  }
 }

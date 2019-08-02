@@ -19,8 +19,10 @@ export class LoginComponent implements OnInit {
 
   onLogIn() {
     this.loginService.loginEmailUSer(this.email, this.password)
+    // tslint:disable-next-line: variable-name
     .then((_res) => {
       this.router.navigate(['home']);
+    // tslint:disable-next-line: variable-name
     }).catch(_mensajeError => alert('Datos Erroneos'));
   }
 
