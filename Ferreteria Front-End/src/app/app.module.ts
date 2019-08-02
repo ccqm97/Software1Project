@@ -23,6 +23,7 @@ import { EditarFacturaComponent } from './components/factura/editar-factura/edit
 import { MostrarFacturaComponent } from './components/factura/mostrar-factura/mostrar-factura.component';
 import { CrudFacturaService } from './services/crud-factura.service';
 import { CrearFacturaComponent } from './components/factura/crear-factura/crear-factura.component';
+import { StructureComponent } from './components/structure/structure.component';
 
 const config = {
   apiKey: 'AIzaSyAFyCq73g0Gtl_AjMmT76uWU6g8LwMrERk',
@@ -45,7 +46,8 @@ const config = {
     MostrarProductosComponent,
     EditarFacturaComponent,
     MostrarFacturaComponent,
-    CrearFacturaComponent
+    CrearFacturaComponent,
+    StructureComponent
   ],
   imports: [
     BrowserModule,
