@@ -15,7 +15,7 @@ import { CrearFacturaComponent } from './components/factura/crear-factura/crear-
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
-  { path: 'home', component: HomeComponent},
+  { path: 'home', component: MostrarProductosComponent},
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent},
   { path: 'agregarProveedor', component: CrearProveedorComponent},
