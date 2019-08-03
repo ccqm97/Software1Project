@@ -5,8 +5,6 @@
  */
 package com.ferreteria.controlador;
 
-import com.ferreteria.ferreteria.Persona;
-import com.ferreteria.services.PersonaService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -25,11 +23,5 @@ import org.springframework.web.bind.annotation.RestController;
 
 public class Controlador {
     
-    @Autowired
-    PersonaService personaService;
-    
-    @GetMapping
-    public List<Persona> listar(){
-        return personaService.list();
-    }     
+   
 }
