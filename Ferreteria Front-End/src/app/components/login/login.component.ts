@@ -29,4 +29,9 @@ export class LoginComponent implements OnInit {
   onLogOut() {
     this.loginService.logOut();
   }
+
+  restablecimiento() {
+    this.router.navigate(['restablecimiento']);
+  }
+
 }

@@ -12,6 +12,7 @@ import { MostrarProductosComponent } from './components/producto/mostrar-product
 import { MostrarFacturaComponent } from './components/factura/mostrar-factura/mostrar-factura.component';
 import { EditarFacturaComponent } from './components/factura/editar-factura/editar-factura.component';
 import { CrearFacturaComponent } from './components/factura/crear-factura/crear-factura.component';
+import { RestablecimientoComponent } from './components/restablecimiento/restablecimiento.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -26,7 +27,8 @@ const routes: Routes = [
   { path: 'editarProducto', component: EditarProductoComponent},
   { path: 'mostrarFacturas', component: MostrarFacturaComponent},
   { path: 'editarFactura', component: EditarFacturaComponent},
-  { path: 'agregarFactura', component: CrearFacturaComponent}
+  { path: 'agregarFactura', component: CrearFacturaComponent},
+  { path: 'restablecimiento', component: RestablecimientoComponent}
 
 ];
 

@@ -32,4 +32,9 @@ export class LoginService {
   isAuth() {
     return this.asfAuth.authState.pipe(map(auth => auth));
   }
+
+  restablecimiento(emailAddress: string) {
+    this.asfAuth.auth.languageCode = 'es';
+    this.asfAuth.auth.sendPasswordResetEmail(emailAddress);
+  }
 }

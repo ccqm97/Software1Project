@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Factura } from 'src/app/model/Factura';
 import { CrudFacturaService } from 'src/app/services/crud-factura.service';
 import { Router } from '@angular/router';
+import { LoginService } from '../../../services/login.service';
 
 @Component({
   selector: 'app-mostrar-factura',
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 export class MostrarFacturaComponent implements OnInit {
 
   facturas:Factura[];
-  constructor(private service:CrudFacturaService, private router:Router) { }
+  constructor(private service:CrudFacturaService, private router:Router, private loginService: LoginService) { }
   
   ngOnInit() {
     this.service.getFactura()
@@ -39,5 +40,10 @@ export class MostrarFacturaComponent implements OnInit {
 
   crear(){
     this.router.navigate(["agregarFactura"]);
+  }
+
+  salir() {
+    this.loginService.logOut();
+    this.router.navigate(['login']);
   }
 }

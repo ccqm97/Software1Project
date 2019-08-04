@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Producto } from 'src/app/model/Producto';
 import { Router } from '@angular/router';
 import { CrudProductoService } from 'src/app/services/crud-producto.service';
+import { LoginService } from '../../../services/login.service';
 
 @Component({
   selector: 'app-mostrar-productos',
@@ -11,7 +12,7 @@ import { CrudProductoService } from 'src/app/services/crud-producto.service';
 export class MostrarProductosComponent implements OnInit {
   
   productos:Producto[];
-  constructor(private service:CrudProductoService, private router:Router) { }
+  constructor(private service:CrudProductoService, private router:Router, private loginService: LoginService) { }
   
   ngOnInit() {
     this.service.getProducto()
@@ -41,5 +42,9 @@ export class MostrarProductosComponent implements OnInit {
     this.router.navigate(["agregarProducto"]);
   }
 
+  salir() {
+    this.loginService.logOut();
+    this.router.navigate(['login']);
+  }
 
 }
