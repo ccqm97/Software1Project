@@ -38,7 +38,7 @@ export class EditarFacturaComponent implements OnInit {
 
   actualizarFactura(factura:Factura){
     console.log(this.factura.proveedor);
-    localStorage.setItem("proveedor", this.factura.proveedor.toString());
+    let proveedor = localStorage.getItem("proveedor");
     this.service.updateFactura(factura)
     .subscribe(data=>{
       this.factura = data;

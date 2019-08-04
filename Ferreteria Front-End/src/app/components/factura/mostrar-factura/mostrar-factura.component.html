@@ -47,24 +47,35 @@
 
       <br>
 
-      <table class="table table-bordered" style="align-content: right;">
-        <tr style="background-color: royalblue; text-decoration-color: white">
-          <th class="text-center">Codigo</th>
-          <th class="text-center">Fecha de factura</th>
-          <th class="text-center">Proveedor</th>
-          <th class="text-center">Opciones</th>
-        </tr>
-        <tr *ngFor="let factura of facturas">
-          <td class="text-center"></td>
-          <td class="text-center"></td>
-          <td class="text-center"></td>
-          <td class="text-center">
-            <button>Opcion1</button>
-            <button>Editar</button>
-            <button>Eliinar</button>
-          </td>
-        </tr>
-      </table>
+      <button (click)="crear()" class="btn btn-success">Agregar Factura</button>
+      <div class="card">
+        <!--Table-->
+        <table class="table table-striped w-auto">
+          <!--Table head-->
+          <thead class="text-center">
+            <tr>
+              <th>Id Factura</th>
+              <th>Codigo Factura Proveedor</th>
+              <th>Proveedor</th>
+              <th>Fecha</th>
+              <th>Opciones</th>
+            </tr>
+          </thead>
+          <!--Table body-->
+          <tbody>
+            <tr *ngFor="let factura of facturas" class="text-center">
+              <td class="text-center">{{factura.idFactura}}</td>
+              <td class="text-center">{{factura.idFacturaProveedor}}</td>
+              <td class="text-center">{{factura.proveedor.nombreProveedor }}</td>
+              <td class="text-center">{{factura.fechaFactura}}</td>
+              <td class="text-center">
+                <button (click)="editarFactura(factura)" class="btn btn-primary">Editar</button>
+                <button (click)="eliminarFactura(factura)" class="btn btn-danger">Eliminar</button>
+            </tr>
+          </tbody>
+        </table>
+        <!--Table-->
+      </div>
     </div>
   </div>
 </body>

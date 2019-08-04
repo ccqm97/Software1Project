@@ -20,8 +20,8 @@
         <div class="form-group">
           <label for="">Proveedor</label>
           <select class="form-control" [(ngModel)]="factura.proveedor" name="proveedor">
-            <option *ngFor="let proveedor of proveedores" [value]="proveedor.nitProveedor" >
-              <span> {{proveedor.nombreProveedor}}</span>
+            <option *ngFor="let proveedor of proveedores" [(ngValue)]="proveedor" >
+              <span>{{proveedor.nombreProveedor}}</span>
             </option>
           </select>
         </div>

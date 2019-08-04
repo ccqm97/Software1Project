@@ -1,12 +1,15 @@
 package com.ferreteriaUniversal.ferreteria.model;
 // Generated 8/07/2019 12:36:17 PM by Hibernate Tools 4.3.1
 
+import java.util.HashSet;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
@@ -35,7 +38,7 @@ public class Proveedor  implements java.io.Serializable {
      private String correoProveedor;
     @Column
      private int telefonoProveedor;
-   
+    
     public Proveedor() {
     }
 
@@ -81,5 +84,5 @@ public class Proveedor  implements java.io.Serializable {
 
     public void setTelefonoProveedor(int telefonoProveedor) {
         this.telefonoProveedor = telefonoProveedor;
-    }
+    }  
 }

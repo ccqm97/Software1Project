@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.ferreteriaUniversal.ferreteria.model;
 
 import java.sql.Date;
@@ -31,10 +26,8 @@ public class Factura {
     private String idFacturaProveedor; 
     @Column
     private Date fechaFactura;
-    @ManyToOne
-    @JoinColumn(name="nit_Proveedor")
-    private Proveedor proveedor;
-
+    @ManyToOne()
+    private Proveedor nitProveedor;
     public Factura() {
     }
 
@@ -42,7 +35,7 @@ public class Factura {
         this.idFactura = idFactura;
         this.idFacturaProveedor = idFacturaProveedor;
         this.fechaFactura = fechaFactura;
-        this.proveedor = proveedor;
+        this.nitProveedor = proveedor;
     }
 
     public int getIdFactura() {
@@ -70,12 +63,10 @@ public class Factura {
     }
 
     public Proveedor getProveedor() {
-        return proveedor;
+        return nitProveedor;
     }
 
     public void setProveedor(Proveedor proveedor) {
-        this.proveedor = proveedor;
+        this.nitProveedor = proveedor;
     }
-
-    
 }

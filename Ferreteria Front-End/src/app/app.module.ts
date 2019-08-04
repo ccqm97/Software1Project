@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { AngularDualListBoxModule } from 'angular-dual-listbox';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AngularFireAuthModule, AngularFireAuth } from '@angular/fire/auth';
@@ -54,6 +55,7 @@ const config = {
     AppRoutingModule,
     AngularFireAuthModule,
     AngularFireModule.initializeApp(config),
+    AngularDualListBoxModule ,
     FormsModule,
     HttpClientModule
   ],
