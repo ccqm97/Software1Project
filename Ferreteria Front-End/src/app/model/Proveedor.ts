@@ -4,5 +4,4 @@ export class Proveedor {
     nombreProveedor: string;
     correoProveedor: string;
     telefonoProveedor: number;
-
 }

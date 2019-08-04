@@ -3,20 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.ferreteria.services;
+package com.ferreteriaUniversal.ferreteria.service;
 
-import com.ferreteria.ferreteria.Producto;
+import com.ferreteriaUniversal.ferreteria.model.Producto;
 import java.util.List;
 
 /**
  *
- * @author oscar
+ * @author Viviana
  */
 public interface ProductoService {
-    
     List<Producto> list();    
-    Producto listId(long id);
+    Producto listID(int id);
     Producto add(Producto producto);
     Producto edit(Producto producto);
-    Producto delete(long id);
+    Producto delete(int id);   
 }

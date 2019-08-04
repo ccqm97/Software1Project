@@ -5,7 +5,8 @@
  */
 package com.ferreteriaUniversal.ferreteria.controlador;
 
-import com.ferreteriaUniversal.ferreteria.model.Proveedor;
+import com.ferreteriaUniversal.ferreteria.model.Factura;
+import com.ferreteriaUniversal.ferreteria.service.FacturaService;
 import com.ferreteriaUniversal.ferreteria.service.ProveedorService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,35 +26,36 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 @RestController
-@RequestMapping({"/proveedores"})
-public class ControladorProveedores {
+@RequestMapping({"/facturas"})
+public class Controladorfacturas {
     
     @Autowired
+    FacturaService facturaService;
     ProveedorService proveedorService;
-
+    
     @GetMapping
-    public List<Proveedor> listar(){
-       return proveedorService.list();
+    public List<Factura> listar(){
+       return facturaService.list();
     }
   
     @PostMapping
-    public Proveedor agregar(@RequestBody Proveedor proveedor){
-        return proveedorService.add(proveedor);
+    public Factura agregar(@RequestBody Factura factura){
+        return facturaService.add(factura);
     }
     
-     @GetMapping(path = {"/{nitProveedor}"})
-    public Proveedor listarId(@PathVariable("nitProveedor") int nitProveedor){
-       return proveedorService.listNIT(nitProveedor);
+     @GetMapping(path = {"/{idFactura}"})
+    public Factura listarId(@PathVariable("idFactura") int idFactura){
+       return facturaService.listId(idFactura);
     }
     
-    @PutMapping(path ={"/{nitProveedor}"})
-    public Proveedor editar(@RequestBody Proveedor proveedor, @PathVariable("nitProveedor") int nitProveedor){
-        proveedor.setNitProveedor(nitProveedor);
-        return proveedorService.edit(proveedor);
+    @PutMapping(path ={"/{idFactura}"})
+    public Factura editar(@RequestBody Factura factura, @PathVariable("idFactura") int idFactura){
+        factura.setIdFactura(idFactura);
+        return facturaService.edit(factura);
     }
     
-    @DeleteMapping(path = {"/{nitProveedor}"})
-    public Proveedor delete(@PathVariable("nitProveedor") int nitProveedor){
-        return proveedorService.delete(nitProveedor);
+    @DeleteMapping(path = {"/{idFactura}"})
+    public Factura delete(@PathVariable("idFactura") int idFactura){
+        return facturaService.delete(idFactura);
     }
 }
