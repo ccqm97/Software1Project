@@ -40,4 +40,6 @@ export class MostrarProductosComponent implements OnInit {
   crear(){
     this.router.navigate(["agregarProducto"]);
   }
+
+
 }
