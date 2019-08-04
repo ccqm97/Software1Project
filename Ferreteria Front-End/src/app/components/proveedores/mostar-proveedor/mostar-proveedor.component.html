@@ -34,12 +34,8 @@
       <a style="position: fixed">Lista de Proveedores</a>
       <br>
     
-      <br>
-      <button><img src="/assets/img/add.png" style="width: 30px; height: 30px" (click)="crear()"></button>
     </div>
     
-    <br>
-    <br>
     <br>
     <br>
     
@@ -48,7 +44,8 @@
     <br>
 
       <button  (click)="crear()" class="btn btn-success">Agregar Proveedor</button>
-
+      <br>
+      <br>
       <div class="card">
         <!--Table-->
         <table class="table table-striped w-auto">
@@ -65,7 +62,6 @@
           </thead>
           <!--Table body-->
           <tbody>
-            <tr *ngFor="let proveedor of Proveedores" class="text-center">
             <tr *ngFor="let proveedor of proveedores" class="text-center">
                 <td class="text-center">{{proveedor.nitProveedor}}</td>
                 <td class="text-center">{{proveedor.nombreProveedor}}</td>
