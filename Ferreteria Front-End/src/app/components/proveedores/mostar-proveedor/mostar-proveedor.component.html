@@ -29,8 +29,7 @@
         <table id="tablaProveedor"style="width:100%" class="display">
           <!--Table head-->
           <thead class="text-center">
-            <tr>
-              <th>#</th>
+            <tr></tr>
               <th>NIT</th>
               <th>Nombre</th>
               <th>Correo</th>
@@ -43,11 +42,9 @@
             <tr *ngFor="let proveedor of proveedores" class="text-center">
               <td class="text-center">{{proveedor.nitProveedor}}</td>
               <td class="text-center">{{proveedor.nombreProveedor}}</td>
-              <td class="text-center"></td>
               <td class="text-center">{{proveedor.correoProveedor}}</td>
               <td class="text-center">{{proveedor.telefonoProveedor}}</td>
               <td class="text-center">
-                <button (click)="verInfoProveedor(proveedor)" class="btn btn-info">Ver </button>
                 <button (click)="editarProveedor(proveedor)" class="btn btn-primary">Editar</button>
                 <button (click)="eliminarProveedor(proveedor)" class="btn btn-danger">Eliminar</button>
             </tr>
