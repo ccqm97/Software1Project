@@ -4,25 +4,37 @@
       <h3>Editar Proveedor</h3>
     </div>
     <div class="card-body">
-      <form action="">
+      <form [formGroup]="prov" (ngSubmit)="actualizarProveedor(proveedor)">
         <div class="form-group">
           <label  for="">Nit</label>
-          <input [(ngModel)]="proveedor.nitProveedor" name="nitProveedor" type="text" class="form-control">
+          <input [(ngModel)]="proveedor.nitProveedor" name="nitProveedor" type="text" formControlName="nit" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nit.errors }">
+          <div *ngIf="submitted && f.nit.errors" class="invalid-feedback">
+            <div *ngIf="f.nit.errors.required">Por favor, ingrese el nit del proveedor. (Solo números)</div>
+          </div>
         </div>
         <div class="form-group">
           <label for="">Nombre</label>
-          <input [(ngModel)]="proveedor.nombreProveedor" name="nombreProveedor" type="text" class="form-control">
+          <input [(ngModel)]="proveedor.nombreProveedor" name="nombreProveedor" type="text" formControlName="nombre" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }">
+          <div *ngIf="submitted && f.nombre.errors" class="invalid-feedback">
+            <div *ngIf="f.nombre.errors.required">Por favor, ingrese el nombre del proveedor</div>
+          </div>
         </div>
         <div class="form-group">
           <label for="">Correo</label>
-          <input [(ngModel)]="proveedor.correoProveedor" name="correoProveedor" type="text" class="form-control">
+          <input [(ngModel)]="proveedor.correoProveedor" name="correoProveedor" type="text" formControlName="correo" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.correo.errors }">
+          <div *ngIf="submitted && f.correo.errors" class="invalid-feedback">
+            <div *ngIf="f.correo.errors.required">Por favor, ingrese el correo del proveedor</div>
+          </div>
         </div>
         <div class="form-group">
-          <label for="">Telefono</label>
-          <input [(ngModel)]="proveedor.telefonoProveedor" name="telefonoProveedor" type="text" class="form-control">
+          <label for="">Teléfono</label>
+          <input [(ngModel)]="proveedor.telefonoProveedor" name="telefonoProveedor" type="text" formControlName="telefono" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.telefono.errors }">
+          <div *ngIf="submitted && f.telefono.errors" class="invalid-feedback">
+            <div *ngIf="f.telefono.errors.required">Por favor, ingrese el teléfono del proveedor. (Solo números)</div>
+          </div>
         </div>
           <button (click)="cancelar()" class="btn btn-danger">Cancelar</button>
-          <button (click)="actualizarProveedor(proveedor)" class="btn btn-success" style="margin-left: 10px">Actualizar</button>
+          <button [disabled]="loading" class="btn btn-success" style="margin-left: 10px">Guardar</button>
         </form>
     </div>
   </div>

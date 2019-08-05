@@ -4,17 +4,23 @@
       <h3>Agregar Producto</h3>
     </div>
     <div class="card-body">
-      <form action="">
+      <form [formGroup]="prod" (ngSubmit)="guardarProducto()">
         <div class="form-group">
           <label for="">Nombre del Producto</label>
-          <input [(ngModel)]="producto.nombreProducto" name="nombreProveedor" type="text" class="form-control">
+          <input [(ngModel)]="producto.nombreProducto" name="nombreProveedor" type="text" formControlName="nombreProd" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nombreProd.errors }">
+          <div *ngIf="submitted && f.nombreProd.errors" class="invalid-feedback">
+            <div *ngIf="f.nombreProd.errors.required">Por favor, ingrese el nombre del producto</div>
+          </div>
         </div>
         <div class="form-group">
           <label for="">Descripcion del Producto</label>
-          <input [(ngModel)]="producto.descripcion" name="correoProveedor" type="text" class="form-control">
+          <input [(ngModel)]="producto.descripcion" name="correoProveedor" type="text" formControlName="descProd" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.descProd.errors }">
+          <div *ngIf="submitted && f.descProd.errors" class="invalid-feedback">
+            <div *ngIf="f.descProd.errors.required">Por favor, ingrese la descripción del producto</div>
+          </div>
         </div>
         <button (click)="cancelar()" class="btn btn-danger">Cancelar</button>
-        <button (click)="guardarProducto()" class="btn btn-success" style="margin-left: 10px">Guardar</button>
+        <button [disabled]="loading" class="btn btn-success" style="margin-left: 10px">Guardar</button>
       </form>
     </div>
   </div>

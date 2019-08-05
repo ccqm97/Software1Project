@@ -3,6 +3,8 @@ import { Factura } from 'src/app/model/Factura';
 import { CrudFacturaService } from 'src/app/services/crud-factura.service';
 import { Router } from '@angular/router';
 import { LoginService } from '../../../services/login.service';
+import * as $ from 'jquery';
+import 'DataTables.net';
 
 @Component({
   selector: 'app-mostrar-factura',
@@ -10,11 +12,42 @@ import { LoginService } from '../../../services/login.service';
   styleUrls: ['./mostrar-factura.component.css']
 })
 export class MostrarFacturaComponent implements OnInit {
-
+  dtOption: any = {};
   facturas:Factura[];
   constructor(private service:CrudFacturaService, private router:Router, private loginService: LoginService) { }
   
   ngOnInit() {
+    this.dtOption = {
+      "language": {
+				"emptyTable":			"No hay datos disponibles en la tabla.",
+				"info":		   		"Del _START_ al _END_ de _TOTAL_ ",
+				"infoEmpty":			"Mostrando 0 registros de un total de 0.",
+				"infoFiltered":			"(filtrados de un total de _MAX_ registros)",
+				"infoPostFix":			"(actualizados)",
+				"lengthMenu":			"Mostrar _MENU_ registros",
+				"loadingRecords":		"Cargando...",
+				"processing":			"Procesando...",
+				"search":			"Buscar Producto:",
+				"searchPlaceholder":		"Dato para buscar",
+				"zeroRecords":			"No se han encontrado coincidencias.",
+				"paginate": {
+					"first":			"Primera",
+					"last":				"Última",
+					"next":				"Siguiente",
+					"previous":			"Anterior"
+				},
+				"aria": {
+					"sortAscending":	"Ordenación ascendente",
+					"sortDescending":	"Ordenación descendente"
+				}
+			},
+        "paging":   true,
+        "ordering": false,
+        "info":     false
+    };
+    $(()=>{  
+      $('#tf').DataTable(this.dtOption);
+    });
     this.service.getFactura()
     .subscribe(data=>{
       this.facturas=data;

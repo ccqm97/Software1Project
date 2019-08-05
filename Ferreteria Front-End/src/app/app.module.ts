@@ -8,7 +8,7 @@ import { AngularFireAuthModule, AngularFireAuth } from '@angular/fire/auth';
 import { AngularFireModule } from '@angular/fire';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './components/register/register.component';
 import { CrudService } from './services/crud.service';
 import { CrudProveedorService } from './services/crud-proveedor.service';
@@ -59,6 +59,7 @@ const config = {
     AngularFireModule.initializeApp(config),
     AngularDualListBoxModule ,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [CrudService,

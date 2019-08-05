@@ -20,7 +20,7 @@
     <div class="col-sm-2">
       <app-structure></app-structure>
     </div>
-    <div class="col-sm-10">
+    <div class="col-md-9 col-sm-10">
       <div class="input-group md-form form-sm form-2 pl-0">
         <input class="form-control my-0 py-1 red-border" type="text" placeholder="Search" aria-label="Search">
         <div class="input-group-append">
@@ -31,7 +31,7 @@
       <button (click)="crear()" class="btn btn-success" style="margin: 10px">Agregar Producto</button>
       <div class="card">
         <!--Table-->
-        <table class="table table-striped w-auto">
+        <table id="tablaProductos" style="width:100%" class="display">
           <!--Table head-->
           <thead class="text-center">
             <tr>
