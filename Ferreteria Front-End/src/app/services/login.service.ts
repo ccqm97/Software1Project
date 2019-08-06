@@ -10,9 +10,8 @@ export class LoginService {
   constructor(private asfAuth: AngularFireAuth) { }
 
   loginEmailUSer(email: string, pass: string) {
-    
-    this.asfAuth.auth.languageCode = 'es';
     return new Promise((resolve, reject) => {
+      this.asfAuth.auth.languageCode = 'es';
       this.asfAuth.auth.signInWithEmailAndPassword(email, pass)
         .then(userData => resolve(userData), err => reject(err));
     });
@@ -38,5 +37,14 @@ export class LoginService {
   restablecimiento(emailAddress: string) {
     this.asfAuth.auth.languageCode = 'es';
     this.asfAuth.auth.sendPasswordResetEmail(emailAddress);
+  }
+
+  login2(email: string, pass: string) {
+    return new Promise((resolve, reject) => {
+      this.asfAuth.auth.createUserWithEmailAndPassword(email, pass)
+        .then(userData => {
+          resolve(userData);
+        }).catch(err => console.log(reject(err)));
+    });
   }
 }
