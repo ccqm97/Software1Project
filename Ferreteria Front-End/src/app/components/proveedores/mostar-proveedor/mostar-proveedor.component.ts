@@ -79,4 +79,8 @@ export class MostarProveedorComponent implements OnInit {
     this.loginservice.logOut();
     this.router.navigate(['login']);
   }
+
+  admin() {
+    this.router.navigate(['register']);
+  }
 }

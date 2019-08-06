@@ -1,10 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Restablecer Constraseña</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+
+</head>
+<body>
 <div class="container">
   <div class="card">
     <div class="card-body text-center">
-      <h1 class="h3 mb-3 font-weight-normal">Sistema De Inventarios Ferreteria Universal</h1>
+      <h1 class="h3 mb-3 font-weight-normal text-center">Sistema De Inventarios Ferreteria Universal</h1>
+      <br>
+      <br>
+      <img src="/assets/img/logo.jpg" alt="logo" style="width: 200px">
+      <br>
+      <br>
       <form #formLogin="ngForm" (submit)="restablecimiento()">
-        <h1 class="h3 mb-3 font-weight-normal" *ngIf="!isError">Restablecimiento de Contraseña</h1>
-        <img src="/assets/img/logo.jpg" alt="logo" style="width: 200px">
+        <h1 class="h3 mb-3 font-weight-normal" *ngIf="!isError">Olvidó su contraseña?</h1>
+        <h5>Por favor ingrese el correo asociado</h5>
         <div class="form-group">
           <div class="input-group">
             <input [(ngModel)]="emailAddress" type="email" id="email" name="email" class="form-control"
@@ -19,3 +36,5 @@
     </div>
   </div>
 </div>
+</body>
+</html>

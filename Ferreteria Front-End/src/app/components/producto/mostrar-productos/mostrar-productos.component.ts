@@ -80,4 +80,8 @@ export class MostrarProductosComponent implements OnInit {
     this.router.navigate(['login']);
   }
 
+  admin() {
+    this.router.navigate(['register']);
+  }
+
 }

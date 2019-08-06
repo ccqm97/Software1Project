@@ -9,7 +9,6 @@ import { AngularFireModule } from '@angular/fire';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RegisterComponent } from './components/register/register.component';
 import { CrudService } from './services/crud.service';
 import { CrudProveedorService } from './services/crud-proveedor.service';
 import { HttpClientModule } from '@angular/common/http';
@@ -26,6 +25,7 @@ import { CrudFacturaService } from './services/crud-factura.service';
 import { CrearFacturaComponent } from './components/factura/crear-factura/crear-factura.component';
 import { StructureComponent } from './components/structure/structure.component';
 import { RestablecimientoComponent } from './components/restablecimiento/restablecimiento.component';
+import { RegisterComponent } from './components/register/register.component';
 
 const config = {
   apiKey: 'AIzaSyAFyCq73g0Gtl_AjMmT76uWU6g8LwMrERk',
@@ -39,7 +39,6 @@ const config = {
     AppComponent,
     LoginComponent,
     HomeComponent,
-    RegisterComponent,
     CrearProveedorComponent,
     MostarProveedorComponent,
     EditarProveedorComponent,
@@ -50,7 +49,8 @@ const config = {
     MostrarFacturaComponent,
     CrearFacturaComponent,
     StructureComponent,
-    RestablecimientoComponent
+    RestablecimientoComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
