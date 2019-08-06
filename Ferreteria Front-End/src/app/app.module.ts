@@ -26,6 +26,7 @@ import { CrudFacturaService } from './services/crud-factura.service';
 import { CrearFacturaComponent } from './components/factura/crear-factura/crear-factura.component';
 import { StructureComponent } from './components/structure/structure.component';
 import { RestablecimientoComponent } from './components/restablecimiento/restablecimiento.component';
+import { DataTablesModule } from 'angular-datatables';
 
 const config = {
   apiKey: 'AIzaSyAFyCq73g0Gtl_AjMmT76uWU6g8LwMrERk',
@@ -60,7 +61,8 @@ const config = {
     AngularDualListBoxModule ,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    DataTablesModule
   ],
   providers: [CrudService,
     CrudProveedorService,

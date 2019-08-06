@@ -4,7 +4,6 @@ import { CrudFacturaService } from 'src/app/services/crud-factura.service';
 import { Router } from '@angular/router';
 import { LoginService } from '../../../services/login.service';
 import * as $ from 'jquery';
-import 'DataTables.net';
 
 @Component({
   selector: 'app-mostrar-factura',
@@ -12,7 +11,7 @@ import 'DataTables.net';
   styleUrls: ['./mostrar-factura.component.css']
 })
 export class MostrarFacturaComponent implements OnInit {
-  dtOption: any = {};
+  dtOption: DataTables.Settings = {};
   facturas:Factura[];
   constructor(private service:CrudFacturaService, private router:Router, private loginService: LoginService) { }
   
@@ -41,13 +40,13 @@ export class MostrarFacturaComponent implements OnInit {
 					"sortDescending":	"Ordenación descendente"
 				}
 			},
-        "paging":   true,
-        "ordering": false,
-        "info":     false
+      pagingType: 'full_numbers',
+      pageLength: 10,
+      processing: true
     };
-    $(()=>{  
+   /* $(()=>{  
       $('#tf').DataTable(this.dtOption);
-    });
+    });*/
     this.service.getFactura()
     .subscribe(data=>{
       this.facturas=data;
