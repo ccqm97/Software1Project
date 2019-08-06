@@ -79,7 +79,7 @@ export class MostrarProductosComponent implements OnInit {
   }
 
   admin() {
-    this.router.navigate(['home-admin']);
+    this.router.navigate(['admin']);
   }
 
 }

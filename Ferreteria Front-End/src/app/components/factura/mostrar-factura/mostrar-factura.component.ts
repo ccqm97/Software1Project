@@ -11,6 +11,7 @@ import * as $ from 'jquery';
   styleUrls: ['./mostrar-factura.component.css']
 })
 export class MostrarFacturaComponent implements OnInit {
+
   dtOption: DataTables.Settings = {};
   facturas:Factura[];
   constructor(private service:CrudFacturaService, private router:Router, private loginService: LoginService) { }
@@ -80,6 +81,6 @@ export class MostrarFacturaComponent implements OnInit {
   }
 
   admin() {
-    this.router.navigate(['home-admin']);
+    this.router.navigate(['admin']);
   }
 }

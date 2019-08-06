@@ -25,7 +25,7 @@ import { CrudFacturaService } from './services/crud-factura.service';
 import { CrearFacturaComponent } from './components/factura/crear-factura/crear-factura.component';
 import { StructureComponent } from './components/structure/structure.component';
 import { RestablecimientoComponent } from './components/restablecimiento/restablecimiento.component';
-import { RegisterComponent } from './components/register/register.component';
+import { RegisterComponent } from './components/admin/register/register.component';
 import { ModificarUsuarioComponent } from './components/admin/modificar-usuario/modificar-usuario.component';
 import { EliminarUsuarioComponent } from './components/admin/eliminar-usuario/eliminar-usuario.component';
 import { HomeAdminComponent } from './components/admin/home-admin/home-admin.component';
