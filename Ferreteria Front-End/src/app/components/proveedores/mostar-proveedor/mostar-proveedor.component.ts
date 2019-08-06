@@ -80,6 +80,6 @@ export class MostarProveedorComponent implements OnInit {
   }
 
   admin() {
-    this.router.navigate(['register']);
+    this.router.navigate(['home-admin']);
   }
 }

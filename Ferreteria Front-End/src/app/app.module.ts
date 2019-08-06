@@ -26,6 +26,9 @@ import { CrearFacturaComponent } from './components/factura/crear-factura/crear-
 import { StructureComponent } from './components/structure/structure.component';
 import { RestablecimientoComponent } from './components/restablecimiento/restablecimiento.component';
 import { RegisterComponent } from './components/register/register.component';
+import { ModificarUsuarioComponent } from './components/admin/modificar-usuario/modificar-usuario.component';
+import { EliminarUsuarioComponent } from './components/admin/eliminar-usuario/eliminar-usuario.component';
+import { HomeAdminComponent } from './components/admin/home-admin/home-admin.component';
 
 
 const config = {
@@ -51,7 +54,10 @@ const config = {
     CrearFacturaComponent,
     StructureComponent,
     RestablecimientoComponent,
-    RegisterComponent
+    RegisterComponent,
+    ModificarUsuarioComponent,
+    EliminarUsuarioComponent,
+    HomeAdminComponent
   ],
   imports: [
     BrowserModule,
