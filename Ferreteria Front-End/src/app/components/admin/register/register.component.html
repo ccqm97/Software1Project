@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>Registro</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body style="background: yellow">
+
+  <header>
+    <nav class="navbar justify-content-between" style="background-color: yellow">
+      <button (click)="admin()"><img src="/assets/img/admin.png" style="width: 40px; height: 40px">Administardor</button>
+      <button (click)="salir()"><img src="/assets/img/user.png" style="width: 40px; height: 40px">Cerrar Sesión</button>
+    </nav>
+  </header>
+
+  <div class="row">
+    <div class="col-sm-2" style="margin-left: 17px">
+      <app-structure></app-structure>
+    </div>
+    <div class="col-md-9 col-sm-10">
+
+      <h1 class="h3 mb-3 font-weight-normal text-center">Registro Usuario</h1>
+      <section id="register" class="mb-5 mt-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-sm-4 col-md-4 mx-auto">
+              <div class="card_register">
+                <div class="card">
+                  <div class="card-body text-center">
+                    <form #formRegister="ngForm" (ngSubmit)="addUser()">
+                      <div class="form-group">
+                        <input type="email" name="email" class="form-control" placeholder="Correo Electronico"
+                          [(ngModel)]="email" required minlength="8">
+                      </div>
+
+                      <div class="form-group">
+                        <input type="password" name="password" class="form-control" placeholder="Contraseña"
+                          [(ngModel)]="password" required minlength="5" maxlength="10">
+                      </div>
+
+                      <button class="btn btn-lg btn-danger btn-block" (click)="salir()">Cancelar</button>
+
+                      <button class="btn btn-lg btn-success btn-block" type="submit">Aceptar</button>
+
+                    </form>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+</body>
+
+</html>

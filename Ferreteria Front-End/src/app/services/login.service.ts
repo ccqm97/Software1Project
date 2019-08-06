@@ -24,9 +24,7 @@ export class LoginService {
   registerUser(email: string, pass: string) {
     return new Promise((resolve, reject) => {
       this.asfAuth.auth.createUserWithEmailAndPassword(email, pass)
-        .then(userData => {
-          resolve(userData);
-        }).catch(err => console.log(reject(err)));
+        .then(userData => resolve(userData), err => reject(err));
     });
   }
 
@@ -39,12 +37,4 @@ export class LoginService {
     this.asfAuth.auth.sendPasswordResetEmail(emailAddress);
   }
 
-  login2(email: string, pass: string) {
-    return new Promise((resolve, reject) => {
-      this.asfAuth.auth.createUserWithEmailAndPassword(email, pass)
-        .then(userData => {
-          resolve(userData);
-        }).catch(err => console.log(reject(err)));
-    });
-  }
 }
