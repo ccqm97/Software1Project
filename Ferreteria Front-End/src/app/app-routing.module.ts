@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
-import { HomeComponent } from './components/home/home.component';
 import { RegisterComponent } from './components/register/register.component';
 import { CrearProveedorComponent } from './components/proveedores/crear-proveedor/crear-proveedor.component';
 import { MostarProveedorComponent } from './components/proveedores/mostar-proveedor/mostar-proveedor.component';

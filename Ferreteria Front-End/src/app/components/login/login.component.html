@@ -13,10 +13,13 @@
   <div class="card">
     <div class="card-body text-center">
       <h1 class="h3 mb-3 font-weight-normal">Sistema De Inventarios Ferreteria Universal</h1>
+      <br>
+      <br>
       <form #formLogin="ngForm" (submit)="onLogIn()">
         <h1 class="h3 mb-3 font-weight-normal" *ngIf="!isError">Inicio de Sesion</h1>
         <img src="/assets/img/logo.jpg" alt="logo" style="width: 200px">
         <div class="form-group">
+          <br>
           <div class="input-group">
             <input [(ngModel)]="email" type="email" id="email" name="email" class="form-control"
               placeholder="Correo electronico" required>

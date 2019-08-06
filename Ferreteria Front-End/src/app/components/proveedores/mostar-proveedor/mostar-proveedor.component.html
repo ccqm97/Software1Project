@@ -13,11 +13,12 @@
 
   <header>
     <nav class="navbar justify-content-between" style="background-color: yellow">
+      <button (click)="admin()"><img src="/assets/img/admin.png" style="width: 40px; height: 40px">Administardor</button>
       <button (click)="salir()"><img src="/assets/img/user.png" style="width: 40px; height: 40px">Cerrar Sesión</button>
     </nav>
   </header>
   <div class="row">
-    <div class="col-sm-2">
+    <div class="col-sm-2" style="margin-left: 17px">
       <app-structure></app-structure>
     </div>
     <div class="col-md-9 col-sm-10">
@@ -30,7 +31,6 @@
           <!--Table head-->
           <thead class="text-center">
             <tr>
-              <th>#</th>
               <th>NIT</th>
               <th>Nombre</th>
               <th>Correo</th>
@@ -43,11 +43,9 @@
             <tr *ngFor="let proveedor of proveedores" class="text-center">
               <td class="text-center">{{proveedor.nitProveedor}}</td>
               <td class="text-center">{{proveedor.nombreProveedor}}</td>
-              <td class="text-center"></td>
               <td class="text-center">{{proveedor.correoProveedor}}</td>
               <td class="text-center">{{proveedor.telefonoProveedor}}</td>
               <td class="text-center">
-                <button (click)="verInfoProveedor(proveedor)" class="btn btn-info">Ver </button>
                 <button (click)="editarProveedor(proveedor)" class="btn btn-primary">Editar</button>
                 <button (click)="eliminarProveedor(proveedor)" class="btn btn-danger">Eliminar</button>
             </tr>

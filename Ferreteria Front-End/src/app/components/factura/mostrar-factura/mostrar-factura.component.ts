@@ -78,4 +78,8 @@ export class MostrarFacturaComponent implements OnInit {
     this.loginService.logOut();
     this.router.navigate(['login']);
   }
+
+  admin() {
+    this.router.navigate(['register']);
+  }
 }

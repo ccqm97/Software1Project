@@ -22,10 +22,9 @@ export class LoginComponent implements OnInit {
     this.loginService.loginEmailUSer(this.email, this.password)
     // tslint:disable-next-line: variable-name
     .then((_res) => {
-      this.router.navigateByUrl("/home",{skipLocationChange:false});
-      //this.router.navigate(['home']);
-    // tslint:disable-next-line: variable-name
-    }).catch(_mensajeError => alert('Datos Erroneos'));
+      this.router.navigate(['home']);
+      // tslint:disable-next-line: variable-name
+    }).catch(_mensajeError => alert('El usuario o la contraseña no coindicen con ninguna cuenta'));
   }
 
   onLogOut() {
@@ -35,5 +34,6 @@ export class LoginComponent implements OnInit {
   restablecimiento() {
     this.router.navigate(['restablecimiento']);
   }
+
 
 }
