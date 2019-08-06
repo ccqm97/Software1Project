@@ -4,7 +4,6 @@ import { CrudProveedorService } from 'src/app/services/crud-proveedor.service';
 import { Router } from '@angular/router';
 import { LoginService } from '../../../services/login.service';
 import * as $ from 'jquery';
-import 'DataTables.net';
 
 @Component({
   selector: 'app-mostar-proveedor',
@@ -12,7 +11,7 @@ import 'DataTables.net';
   styleUrls: ['./mostar-proveedor.component.css']
 })
 export class MostarProveedorComponent implements OnInit {
-  dtOption: any = {};
+  dtOption: DataTables.Settings = {};
   proveedores: Proveedor[];
   constructor(private service: CrudProveedorService, private router: Router, private loginservice: LoginService) { }
 
@@ -41,12 +40,12 @@ export class MostarProveedorComponent implements OnInit {
 					"sortDescending":	"Ordenación descendente"
 				}
 			},
-        "paging":   true,
-        "ordering": false,
-        "info":     false
+      pagingType: 'full_numbers',
+      pageLength: 10,
+      processing: true
     };
     $(()=>{  
-      $('#tablaProveedor').DataTable(this.dtOption);
+      
     });
     this.service.getProveedores()
     .subscribe(data => {

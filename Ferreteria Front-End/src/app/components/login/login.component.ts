@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { LoginService } from 'src/app/services/login.service';
 import { Router } from '@angular/router';
+import{Location} from '@angular/common'
 
 @Component({
   selector: 'app-login',

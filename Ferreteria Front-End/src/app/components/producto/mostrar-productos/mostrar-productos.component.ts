@@ -1,10 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Producto } from 'src/app/model/Producto';
 import { Router } from '@angular/router';
+import * as $ from 'jquery';
 import { CrudProductoService } from 'src/app/services/crud-producto.service';
 import { LoginService } from '../../../services/login.service';
-import * as $ from 'jquery';
-import 'DataTables.net';
+
 
 @Component({
   selector: 'app-mostrar-productos',
@@ -12,7 +12,7 @@ import 'DataTables.net';
   styleUrls: ['./mostrar-productos.component.css']
 })
 export class MostrarProductosComponent implements OnInit {
-  dtOption: any = {};
+  dtOption: DataTables.Settings = {};
   productos:Producto[];
   constructor(private service:CrudProductoService, private router:Router, private loginService: LoginService) { }
   
@@ -41,17 +41,15 @@ export class MostrarProductosComponent implements OnInit {
 					"sortDescending":	"Ordenación descendente"
 				}
 			},
-        "paging":   true,
-        "ordering": false,
-        "info":     false
+      pagingType: 'full_numbers',
+      pageLength: 10,
+      processing: true
     };
-    $(()=>{  
-      $('#tablaProductos').DataTable(this.dtOption);
+    this.service.getProducto().subscribe(data=>{this.productos=data;});
+    $(()=>{
+      
     });
-    this.service.getProducto()
-    .subscribe(data=>{
-      this.productos=data;
-    })
+    
   }
 
   editarProducto(producto:Producto){

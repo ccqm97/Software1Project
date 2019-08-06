@@ -27,6 +27,7 @@ import { StructureComponent } from './components/structure/structure.component';
 import { RestablecimientoComponent } from './components/restablecimiento/restablecimiento.component';
 import { RegisterComponent } from './components/register/register.component';
 
+
 const config = {
   apiKey: 'AIzaSyAFyCq73g0Gtl_AjMmT76uWU6g8LwMrERk',
   authDomain: 'YOUR_AUTH_DOMAIN',
