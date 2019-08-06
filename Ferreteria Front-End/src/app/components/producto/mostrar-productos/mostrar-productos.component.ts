@@ -47,8 +47,9 @@ export class MostrarProductosComponent implements OnInit {
     };
     this.service.getProducto().subscribe(data=>{this.productos=data;});
     $(()=>{
-     
+      
     });
+    
   }
 
   editarProducto(producto:Producto){
