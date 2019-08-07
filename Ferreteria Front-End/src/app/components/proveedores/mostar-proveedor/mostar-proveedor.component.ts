@@ -11,6 +11,7 @@ import * as $ from 'jquery';
   styleUrls: ['./mostar-proveedor.component.css']
 })
 export class MostarProveedorComponent implements OnInit {
+  
   dtOption: DataTables.Settings = {};
   proveedores: Proveedor[];
   constructor(private service: CrudProveedorService, private router: Router, private loginservice: LoginService) { }
