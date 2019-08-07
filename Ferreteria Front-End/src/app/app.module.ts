@@ -67,7 +67,7 @@ const config = {
     AngularDualListBoxModule ,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [CrudService,
     CrudProveedorService,
