@@ -12,12 +12,9 @@ import 'datatables.net';
   styleUrls: ['./mostar-proveedor.component.css']
 })
 export class MostarProveedorComponent implements OnInit {
-<<<<<<< HEAD
   
   dtOption: DataTables.Settings = {};
-=======
   dtOption: any = {};
->>>>>>> 1ce0b7ad967e0ebc8c11fc8d53886ec2bc600ef1
   proveedores: Proveedor[];
   constructor(private service: CrudProveedorService, private router: Router, private loginservice: LoginService) { }
 
