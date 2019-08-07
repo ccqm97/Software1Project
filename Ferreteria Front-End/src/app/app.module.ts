@@ -26,7 +26,6 @@ import { CrearFacturaComponent } from './components/factura/crear-factura/crear-
 import { StructureComponent } from './components/structure/structure.component';
 import { RestablecimientoComponent } from './components/restablecimiento/restablecimiento.component';
 import { RegisterComponent } from './components/register/register.component';
-import { DataTablesModule } from 'angular-datatables';
 
 
 const config = {
@@ -52,7 +51,10 @@ const config = {
     CrearFacturaComponent,
     StructureComponent,
     RestablecimientoComponent,
-    RegisterComponent
+    RegisterComponent,
+    ModificarUsuarioComponent,
+    EliminarUsuarioComponent,
+    HomeAdminComponent
   ],
   imports: [
     BrowserModule,

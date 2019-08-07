@@ -86,6 +86,6 @@ export class MostrarFacturaComponent implements OnInit {
   }
 
   admin() {
-    this.router.navigate(['register']);
+    this.router.navigate(['admin']);
   }
 }
