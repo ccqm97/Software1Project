@@ -65,7 +65,6 @@ const config = {
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    DataTablesModule
   ],
   providers: [CrudService,
     CrudProveedorService,

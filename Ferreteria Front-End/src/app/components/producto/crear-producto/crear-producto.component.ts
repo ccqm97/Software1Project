@@ -6,6 +6,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Proveedor } from 'src/app/model/Proveedor';
 import { CrudProveedorService } from 'src/app/services/crud-proveedor.service';
 import { itemProducto } from 'src/app/model/itemProducto';
+import jsProducto from 'src/assets/js/jsProducto';
 
 
 @Component({
@@ -35,7 +36,7 @@ export class CrearProductoComponent implements OnInit {
       descProd: ['', Validators.required],            
       precio: ['', Validators.required]
     });
-   
+    jsProducto.hola();
   }
   get f() { return this.prod.controls; }
 
