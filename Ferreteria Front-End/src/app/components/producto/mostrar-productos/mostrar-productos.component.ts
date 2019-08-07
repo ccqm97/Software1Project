@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import * as $ from 'jquery';
 import { CrudProductoService } from 'src/app/services/crud-producto.service';
 import { LoginService } from '../../../services/login.service';
+import 'datatables.net';
 
 
 @Component({
@@ -12,46 +13,51 @@ import { LoginService } from '../../../services/login.service';
   styleUrls: ['./mostrar-productos.component.css']
 })
 export class MostrarProductosComponent implements OnInit {
-  dtOption: DataTables.Settings = {};
+  dtOption: any = {};
   productos:Producto[];
   constructor(private service:CrudProductoService, private router:Router, private loginService: LoginService) { }
   
   ngOnInit() {
-    this.dtOption = {
-      "language": {
-				"emptyTable":			"No hay datos disponibles en la tabla.",
-				"info":		   		"Del _START_ al _END_ de _TOTAL_ ",
-				"infoEmpty":			"Mostrando 0 registros de un total de 0.",
-				"infoFiltered":			"(filtrados de un total de _MAX_ registros)",
-				"infoPostFix":			"(actualizados)",
-				"lengthMenu":			"Mostrar _MENU_ registros",
-				"loadingRecords":		"Cargando...",
-				"processing":			"Procesando...",
-				"search":			"Buscar Producto:",
-				"searchPlaceholder":		"Dato para buscar",
-				"zeroRecords":			"No se han encontrado coincidencias.",
-				"paginate": {
-					"first":			"Primera",
-					"last":				"Última",
-					"next":				"Siguiente",
-					"previous":			"Anterior"
-				},
-				"aria": {
-					"sortAscending":	"Ordenación ascendente",
-					"sortDescending":	"Ordenación descendente"
-				}
-			},
-      pagingType: 'full_numbers',
-      pageLength: 10,
-      processing: true
-    };
     this.service.getProducto().subscribe(data=>{this.productos=data;});
-    $(()=>{
-      
-    });
+    this.loadDataTable();
     
   }
 
+  loadDataTable(){
+    $(()=>{
+      setTimeout(() => {
+        this.dtOption = {
+          "language": {
+            "emptyTable":			"No hay datos disponibles en la tabla.",
+            "info":		   		"Del _START_ al _END_ de _TOTAL_ ",
+            "infoEmpty":			"Mostrando 0 registros de un total de 0.",
+            "infoFiltered":			"(filtrados de un total de _MAX_ registros)",
+            "infoPostFix":			"(actualizados)",
+            "lengthMenu":			"Mostrar _MENU_ registros",
+            "loadingRecords":		"Cargando...",
+            "processing":			"Procesando...",
+            "search":			"Buscar Producto:",
+            "searchPlaceholder":		"Dato para buscar",
+            "zeroRecords":			"No se han encontrado coincidencias.",
+            "paginate": {
+              "first":			"Primera",
+              "last":				"Última",
+              "next":				"Siguiente",
+              "previous":			"Anterior"
+            },
+            "aria": {
+              "sortAscending":	"Ordenación ascendente",
+              "sortDescending":	"Ordenación descendente"
+            }
+          },
+          pagingType: 'full_numbers',
+          pageLength: 10,
+          processing: true
+        };
+        var table = (<any>$("#tableProductos").DataTable(this.dtOption));
+      }, 100);
+    });
+  }
   editarProducto(producto:Producto){
     localStorage.setItem("idProducto", producto.idProducto.toString());
     this.router.navigate(["editarProducto"]);

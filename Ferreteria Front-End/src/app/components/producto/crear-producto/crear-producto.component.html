@@ -1,4 +1,4 @@
-<div class="container col-md-6">
+<div class="container col-md-8">
   <div class="card">
     <div class="card-header">
       <h3>Agregar Producto</h3>
@@ -7,18 +7,49 @@
       <form [formGroup]="prod" (ngSubmit)="guardarProducto()">
         <div class="form-group">
           <label for="">Nombre del Producto</label>
-          <input [(ngModel)]="producto.nombreProducto" name="nombreProveedor" type="text" formControlName="nombreProd" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nombreProd.errors }">
+          <input [(ngModel)]="producto.nombreProducto" placeholder="Escriba el nombre del producto" name="nombreProveedor" type="text" formControlName="nombreProd" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nombreProd.errors }">
           <div *ngIf="submitted && f.nombreProd.errors" class="invalid-feedback">
             <div *ngIf="f.nombreProd.errors.required">Por favor, ingrese el nombre del producto</div>
           </div>
         </div>
         <div class="form-group">
           <label for="">Descripcion del Producto</label>
-          <input [(ngModel)]="producto.descripcion" name="correoProveedor" type="text" formControlName="descProd" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.descProd.errors }">
+          <input [(ngModel)]="producto.descripcion" placeholder="Escriba la descripcion del producto" name="correoProveedor" type="text" formControlName="descProd" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.descProd.errors }">
           <div *ngIf="submitted && f.descProd.errors" class="invalid-feedback">
             <div *ngIf="f.descProd.errors.required">Por favor, ingrese la descripción del producto</div>
           </div>
         </div>
+        <div class="form-group">
+            <label for="">Proveedor</label>
+            <select id="ProveedorProducto" class="form-control" [(ngModel)]="itemProducto.proveedor" placeholder="Escoga un proveedor" name="proveedor">
+              <option *ngFor="let proveedor of proveedores" [(ngValue)]="proveedor" >
+                <span>{{proveedor.nombreProveedor}}</span>
+              </option>
+            </select>
+          </div> 
+
+          <div class="form-group">
+              <label for="">Precio</label>
+              <input id="precioProducto" [(ngModel)]="itemProducto.precio" placeholder="Escriba el precio del producto" name="precio" type="text" formControlName="precio" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.precio.errors }">
+              <div *ngIf="submitted && f.precio.errors" class="invalid-feedback">
+                <div *ngIf="f.precio.errors.required">Por favor, ingrese el precio del producto</div>
+              </div>
+            </div>
+              <br>
+            <button type="button" class="btn btn-success gu table-add"> Agregar  </button>
+               
+                <table id= "table" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
+                  <thead>
+                    <tr>
+                    <th style="width: 60%"> Proveedor</th>
+                    <!--th>Fecha actual</th-->
+                    <th>Precio</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!--agrega el contenido aquí-->
+                  </tbody>
+                </table>
         <button (click)="cancelar()" class="btn btn-danger">Cancelar</button>
         <button [disabled]="loading" class="btn btn-success" style="margin-left: 10px">Guardar</button>
       </form>
