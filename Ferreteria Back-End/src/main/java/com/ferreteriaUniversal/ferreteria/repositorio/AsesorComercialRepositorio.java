@@ -5,7 +5,7 @@
  */
 package com.ferreteriaUniversal.ferreteria.repositorio;
 
-import com.ferreteriaUniversal.ferreteria.model.Proveedor;
+import com.ferreteriaUniversal.ferreteria.model.AsesorComercial;
 import java.util.List;
 import org.springframework.data.repository.Repository;
 
@@ -13,10 +13,11 @@ import org.springframework.data.repository.Repository;
  *
  * @author Viviana
  */
-public interface ProveedorRepositorio extends Repository <Proveedor , Long> {
+public interface AsesorComercialRepositorio extends Repository<AsesorComercial, Long>{
+   
+    List<AsesorComercial> findAll();
+    AsesorComercial findOne(long id);
+    AsesorComercial save(AsesorComercial asesorComercial);
+    void delete(AsesorComercial asesorComercial);
     
-    List<Proveedor> findAll();
-    Proveedor findOne(long id);
-    Proveedor save(Proveedor proveedor);
-    void delete(Proveedor proveedor);
 }

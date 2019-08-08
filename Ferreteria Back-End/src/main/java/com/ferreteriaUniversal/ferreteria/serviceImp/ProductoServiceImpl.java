@@ -32,7 +32,7 @@ public class ProductoServiceImpl implements ProductoService{
     }
 
     @Override
-    public Producto listID(int id) {
+    public Producto listID(long id) {
         return productoRepositorio.findOne(id);
     }
 
@@ -42,7 +42,7 @@ public class ProductoServiceImpl implements ProductoService{
     }
 
     @Override
-    public Producto delete(int id) {
+    public Producto delete(long id) {
         Producto producto =productoRepositorio.findOne(id);
         if (producto != null) {
             productoRepositorio.delete(producto);

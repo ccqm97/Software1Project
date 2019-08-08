@@ -31,7 +31,6 @@ public class ControladorFacturas {
     
     @Autowired
     FacturaService facturaService;
-    ProveedorService proveedorService;
     
     @GetMapping
     public List<Factura> listar(){
@@ -44,18 +43,18 @@ public class ControladorFacturas {
     }
     
      @GetMapping(path = {"/{idFactura}"})
-    public Factura listarId(@PathVariable("idFactura") int idFactura){
+    public Factura listarId(@PathVariable("idFactura") long idFactura){
        return facturaService.listId(idFactura);
     }
     
     @PutMapping(path ={"/{idFactura}"})
-    public Factura editar(@RequestBody Factura factura, @PathVariable("idFactura") int idFactura){
+    public Factura editar(@RequestBody Factura factura, @PathVariable("idFactura") long idFactura){
         factura.setIdFactura(idFactura);
         return facturaService.edit(factura);
     }
     
     @DeleteMapping(path = {"/{idFactura}"})
-    public Factura delete(@PathVariable("idFactura") int idFactura){
+    public Factura delete(@PathVariable("idFactura") long idFactura){
         return facturaService.delete(idFactura);
     }
 }

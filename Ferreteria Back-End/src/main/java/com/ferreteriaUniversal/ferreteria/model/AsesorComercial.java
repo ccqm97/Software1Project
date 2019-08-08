@@ -5,6 +5,7 @@
  */
 package com.ferreteriaUniversal.ferreteria.model;
 
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,56 +19,70 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "asesorescomerciales")
-public class AsesorComercial {
+public class AsesorComercial implements Serializable {
     
     @Id
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)        
     private int id_asesor ;
     @Column
-    private String nombre_asesor;
+    private String nombresAsesor;
     @Column
-    private String correo_asesor;
+    private String apellidosAsesor;
     @Column
-    private int telefono_asesor;
+    private String correoAsesor;
+    @Column
+    private int telefonoAsesor;
 
-    public AsesorComercial(int id_asesor, String nombre_asesor, String correo_asesor, int telefono_asesor) {
+    public AsesorComercial() {
+    }
+
+    public AsesorComercial(int id_asesor, String nombresAsesor, String apellidosAsesor, String correoAsesor, int telefonoAsesor) {
         this.id_asesor = id_asesor;
-        this.nombre_asesor = nombre_asesor;
-        this.correo_asesor = correo_asesor;
-        this.telefono_asesor = telefono_asesor;
+        this.nombresAsesor = nombresAsesor;
+        this.apellidosAsesor = apellidosAsesor;
+        this.correoAsesor = correoAsesor;
+        this.telefonoAsesor = telefonoAsesor;
     }
     
     public int getId_asesor() {
         return id_asesor;
     }
 
-    public String getNombre_asesor() {
-        return nombre_asesor;
-    }
-
-    public String getCorreo_asesor() {
-        return correo_asesor;
-    }
-
-    public int getTelefono_asesor() {
-        return telefono_asesor;
-    }
-
     public void setId_asesor(int id_asesor) {
         this.id_asesor = id_asesor;
     }
 
-    public void setNombre_asesor(String nombre_asesor) {
-        this.nombre_asesor = nombre_asesor;
+    public String getNombresAsesor() {
+        return nombresAsesor;
     }
 
-    public void setCorreo_asesor(String correo_asesor) {
-        this.correo_asesor = correo_asesor;
+    public void setNombresAsesor(String nombresAsesor) {
+        this.nombresAsesor = nombresAsesor;
     }
 
-    public void setTelefono_asesor(int telefono_asesor) {
-        this.telefono_asesor = telefono_asesor;
+    public String getApellidosAsesor() {
+        return apellidosAsesor;
     }
 
+    public void setApellidosAsesor(String apellidosAsesor) {
+        this.apellidosAsesor = apellidosAsesor;
+    }
+
+    public String getCorreoAsesor() {
+        return correoAsesor;
+    }
+
+    public void setCorreoAsesor(String correoAsesor) {
+        this.correoAsesor = correoAsesor;
+    }
+
+    public int getTelefonoAsesor() {
+        return telefonoAsesor;
+    }
+
+    public void setTelefonoAsesor(int telefonoAsesor) {
+        this.telefonoAsesor = telefonoAsesor;
+    }
+ 
 }

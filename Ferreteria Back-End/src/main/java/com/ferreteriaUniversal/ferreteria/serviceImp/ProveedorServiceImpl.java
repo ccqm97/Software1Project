@@ -29,7 +29,7 @@ public class ProveedorServiceImpl implements ProveedorService {
     }
 
     @Override
-    public Proveedor listNIT(int id) {
+    public Proveedor listNIT(long id) {
         return proveedorRepositorio.findOne(id);
     }
 
@@ -39,7 +39,7 @@ public class ProveedorServiceImpl implements ProveedorService {
     }
 
     @Override
-    public Proveedor delete(int id) {
+    public Proveedor delete(long id) {
         Proveedor proveedor =proveedorRepositorio.findOne(id);
         if (proveedor != null) {
             proveedorRepositorio.delete(proveedor);
