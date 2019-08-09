@@ -47,12 +47,17 @@ public class ControladorProducto {
     }
     
     @PutMapping(path ={"/{idProducto}"})
-    public Producto editar(@RequestBody Producto producto, @PathVariable("idProducto") long idProducto){
+    public Producto editar(@RequestBody Producto producto, @PathVariable("idProducto") int idProducto){
         return productoService.edit(producto);
     }
     
     @DeleteMapping(path = {"/{idProducto}"})
-    public Producto delete(@PathVariable("idProducto") long nitProveedor){
+    public Producto delete(@PathVariable("idProducto") int nitProveedor){
         return productoService.delete(nitProveedor);
+    }
+    @GetMapping(path = {"/show/{nombreProducto}"})
+    public List<Producto> findProductoByName(@PathVariable("nombreProducto") String nombreProducto) {
+    	
+        return productoService.findByName(nombreProducto);
     }
 }

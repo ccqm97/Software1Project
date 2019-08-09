@@ -33,10 +33,6 @@ export class EditarProveedorComponent implements OnInit {
 
 
   editarProveedor(){
-    this.submitted = true;
-         if (this.prov.invalid) {
-            return;
-        }
     let nitProveedor = localStorage.getItem("nitProveedor");
     this.service.getProveedorNit(+nitProveedor)
     .subscribe(data=>{

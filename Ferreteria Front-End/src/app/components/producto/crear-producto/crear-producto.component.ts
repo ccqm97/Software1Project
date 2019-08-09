@@ -29,8 +29,6 @@ export class CrearProductoComponent implements OnInit {
     private formBuilder: FormBuilder) { }
 
   producto: Producto = new Producto();
-  itemProducto: ItemProducto = new ItemProducto();
-  myItemProducto: ItemProducto = new ItemProducto();
 
   ngOnInit() {
     this.serviceProveedor.getProveedores()
@@ -57,41 +55,31 @@ export class CrearProductoComponent implements OnInit {
   get f() { return this.prod.controls; }
   
   agregarItem(){
-    this.myItemProducto.codigoProducto = $("#codigoProd").text();
-    this.myItemProducto.idProveedor = parseInt($("#ProveedorProducto option:selected").val().toString());
-    this.myItemProducto.precioProducto = parseInt($("#precioProducto").text());
-    if ($("#codItemProducto").val()!==""||$("#precioProducto").val()!=="") {
-      alert("se agregó: "+this.myItemProducto.idProveedor);
-      this.itemsProductos.push(this.myItemProducto);
-      alert("sdsdsdsd"+this.itemsProductos.length);
+    if ($("#codigoProd").val()!==""||$("#precioProducto").val()!=="") {
+      let myItem = new  ItemProducto($("#codigoProd").val().toString(),parseInt($("#ProveedorProducto option:selected").val().toString()),parseInt($("#precioProducto").val().toString()));
+      this.itemsProductos.push(myItem);
+      $('#table > tbody').append($("<tr>").append($("<td>").text($("#ProveedorProducto option:selected").text())).append($("<td>").text($("#precioProducto").val().toString())).append($("<td>").append($('<span>').addClass("btn btn-danger tableActua-remove"))));
     }else{
-      alert("errr");
+      alert("Por favor ingrese los datos");
     }
     
   }
 
   guardarProducto(){
-    this.itemsProductos.forEach(element => {
-      alert("***ITEM"+element.idProveedor+"--"+element.precioProducto);
-      this.itemProdService.guardarItemProducto(element)
-    .subscribe(data=>{
-    });
-    });
-    /*this.submitted = true;
+    this.submitted = true;
          if (this.prod.invalid) {
             return;
         }
     this.sevice.guardarProducto(this.producto)
     .subscribe(data=>{
       this.itemsProductos.forEach(element => {
-        alert("***ITEM"+element.idProveedor);
         this.itemProdService.guardarItemProducto(element)
       .subscribe(data=>{
       });
       });
       alert("El producto se guardó exitosamente");
         this.router.navigate(["mostrarProductos"]);
-    });*/
+    });
     
   }
 

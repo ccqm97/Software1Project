@@ -25,6 +25,8 @@ public class Producto {
 	@GeneratedValue(strategy = GenerationType.AUTO)        
 	private long idProducto;
 	@Column
+	private String codigoProducto;
+	@Column
 	private String nombreProducto;
 	@Column
 	private String descripcion;
@@ -32,8 +34,9 @@ public class Producto {
 	public Producto() {
 	}
 
-    public Producto(long idProducto, String nombreProducto, String descripcion) {
+    public Producto(long idProducto,String codigoProducto, String nombreProducto, String descripcion) {
         this.idProducto = idProducto;
+        this.codigoProducto = codigoProducto;
         this.nombreProducto = nombreProducto;
         this.descripcion = descripcion;
     }
@@ -45,8 +48,16 @@ public class Producto {
     public void setIdProducto(long idProducto) {
         this.idProducto = idProducto;
     }
+    
+    public String getCodigoProducto() {
+		return codigoProducto;
+	}
 
-    public String getNombreProducto() {
+	public void setCodigoProducto(String codigoProducto) {
+		this.codigoProducto = codigoProducto;
+	}
+
+	public String getNombreProducto() {
         return nombreProducto;
     }
 

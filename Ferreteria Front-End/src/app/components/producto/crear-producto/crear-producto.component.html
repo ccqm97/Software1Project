@@ -40,7 +40,7 @@
 
           <div class="form-group">
               <label for="">Precio</label>
-              <input id="precioProducto" [(ngModel)]="itemProducto.precioProducto" placeholder="Escriba el precio del producto" name="precio" type="text" formControlName="precio" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.precio.errors }">
+              <input id="precioProducto" placeholder="Escriba el precio del producto" name="precio" type="text" formControlName="precio" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.precio.errors }">
               <div *ngIf="submitted && f.precio.errors" class="invalid-feedback">
                 <div *ngIf="f.precio.errors.required">Por favor, ingrese el precio del producto</div>
               </div>
@@ -54,6 +54,7 @@
                     <th style="width: 60%"> Proveedor</th>
                     <!--th>Fecha actual</th-->
                     <th>Precio</th>
+                    <th>Eliminar</th>
                     </tr>
                   </thead>
                   <tbody>

@@ -11,4 +11,8 @@ export class CrudItemProductoService {
   guardarItemProducto(itemProducto:ItemProducto){
     return this.http.post<ItemProducto>(this.Url,itemProducto);
   }
+
+  getItemProductoCode(codeProducto:string){
+    return this.http.get<ItemProducto[]>(this.Url+"/"+codeProducto);
+  }
 }

@@ -17,5 +17,6 @@ public interface ProductoService {
     Producto listID(long id);
     Producto add(Producto producto);
     Producto edit(Producto producto);
-    Producto delete(long id);   
+    Producto delete(long id);
+    List<Producto> findByName(String nombreProducto);
 }

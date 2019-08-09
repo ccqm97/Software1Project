@@ -7,6 +7,8 @@ package com.ferreteriaUniversal.ferreteria.repositorio;
 
 import com.ferreteriaUniversal.ferreteria.model.Producto;
 import java.util.List;
+
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.Repository;
 
 /**
@@ -17,5 +19,7 @@ public interface ProductoRepositorio extends Repository <Producto, Long>{
     List<Producto> findAll();
     Producto findOne(long id);
     Producto save(Producto producto);
-    void delete(Producto producto);   
+    void delete(Producto producto);
+    @Query(value="select p from productos p where p.nombre_producto =?1",nativeQuery = true)
+    List<Producto> findByName(String nombreProducto);
 }

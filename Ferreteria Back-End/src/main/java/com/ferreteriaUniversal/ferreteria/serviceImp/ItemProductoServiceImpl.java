@@ -43,4 +43,9 @@ public class ItemProductoServiceImpl implements ItemProductoService {
 		return itemProducto;
 	}
 
+	@Override
+	public List<ItemProducto> listCode(String codigo) {
+		return itemProductoRepositorio.findcode(codigo);
+	}
+
 }

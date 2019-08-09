@@ -5,6 +5,8 @@ import * as $ from 'jquery';
 import { CrudProductoService } from 'src/app/services/crud-producto.service';
 import { LoginService } from '../../../services/login.service';
 import 'datatables.net';
+import { CrudItemProductoService } from 'src/app/services/crud-item-producto.service';
+import { ItemProducto } from 'src/app/model/ItemProducto';
 
 
 @Component({
@@ -15,7 +17,12 @@ import 'datatables.net';
 export class MostrarProductosComponent implements OnInit {
   dtOption: any = {};
   productos:Producto[];
-  constructor(private service:CrudProductoService, private router:Router, private loginService: LoginService) { }
+  itemsProductos:ItemProducto[];
+
+  constructor(private service:CrudProductoService,
+              private itemService:CrudItemProductoService,
+              private router:Router, 
+              private loginService: LoginService) { }
   
   ngOnInit() {
     this.service.getProducto().subscribe(data=>{this.productos=data;});
@@ -55,7 +62,7 @@ export class MostrarProductosComponent implements OnInit {
           processing: true
         };
         var table = (<any>$("#tableProductos").DataTable(this.dtOption));
-      }, 300);
+      }, 500);
     });
   }
   editarProducto(producto:Producto){
@@ -63,9 +70,12 @@ export class MostrarProductosComponent implements OnInit {
     this.router.navigate(["editarProducto"]);
   }
 
-  verInfoProducto(producto:Producto){
-    localStorage.setItem("idProducto", producto.idProducto.toString());
-    this.router.navigate(["verInfoProducto"]);
+  verInfoProducto(code:string){
+    this.itemService.getItemProductoCode(code)
+    .subscribe(data=>{
+      this.itemsProductos=data;
+    });
+
   }
 
   eliminarProducto(producto:Producto){

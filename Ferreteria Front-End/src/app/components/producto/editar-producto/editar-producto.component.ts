@@ -27,10 +27,6 @@ export class EditarProductoComponent implements OnInit {
   get f() { return this.prod.controls; }
 
   editarProducto(){
-    this.submitted = true;
-         if (this.prod.invalid) {
-            return;
-        }
     let idProducto = localStorage.getItem("idProducto");
     this.service.getProductoId(+idProducto)
     .subscribe(data=>{
