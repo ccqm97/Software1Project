@@ -48,7 +48,6 @@ public class ControladorProducto {
     
     @PutMapping(path ={"/{idProducto}"})
     public Producto editar(@RequestBody Producto producto, @PathVariable("idProducto") long idProducto){
-        producto.setIdProducto(idProducto);
         return productoService.edit(producto);
     }
     
