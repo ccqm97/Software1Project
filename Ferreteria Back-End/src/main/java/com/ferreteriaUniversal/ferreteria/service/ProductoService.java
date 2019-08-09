@@ -14,8 +14,8 @@ import java.util.List;
  */
 public interface ProductoService {
     List<Producto> list();    
-    Producto listID(int id);
+    Producto listID(long id);
     Producto add(Producto producto);
     Producto edit(Producto producto);
-    Producto delete(int id);   
+    Producto delete(long id);   
 }

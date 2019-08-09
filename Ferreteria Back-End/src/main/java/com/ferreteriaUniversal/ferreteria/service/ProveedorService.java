@@ -14,8 +14,8 @@ import java.util.List;
 public interface ProveedorService {
     
     List<Proveedor> list();    
-    Proveedor listNIT(int id);
+    Proveedor listNIT(long id);
     Proveedor add(Proveedor proveedor);
     Proveedor edit(Proveedor proveedor);
-    Proveedor delete(int id);
+    Proveedor delete(long id);
 }

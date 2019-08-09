@@ -15,8 +15,8 @@ import java.util.List;
 public interface FacturaService {
     
     List<Factura> list();    
-    Factura listId(int id);
+    Factura listId(long id);
     Factura add(Factura factura);
     Factura edit(Factura factura);
-    Factura delete(int id);
+    Factura delete(long id);
 }

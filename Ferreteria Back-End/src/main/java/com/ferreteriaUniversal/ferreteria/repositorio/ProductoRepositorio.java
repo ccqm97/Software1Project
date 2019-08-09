@@ -13,9 +13,9 @@ import org.springframework.data.repository.Repository;
  *
  * @author Viviana
  */
-public interface ProductoRepositorio extends Repository <Producto, Integer>{
+public interface ProductoRepositorio extends Repository <Producto, Long>{
     List<Producto> findAll();
-    Producto findOne(int id);
+    Producto findOne(long id);
     Producto save(Producto producto);
     void delete(Producto producto);   
 }

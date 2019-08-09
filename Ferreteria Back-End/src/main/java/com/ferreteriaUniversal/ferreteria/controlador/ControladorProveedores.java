@@ -42,18 +42,18 @@ public class ControladorProveedores {
     }
     
      @GetMapping(path = {"/{nitProveedor}"})
-    public Proveedor listarId(@PathVariable("nitProveedor") int nitProveedor){
+    public Proveedor listarId(@PathVariable("nitProveedor") long nitProveedor){
        return proveedorService.listNIT(nitProveedor);
     }
     
     @PutMapping(path ={"/{nitProveedor}"})
-    public Proveedor editar(@RequestBody Proveedor proveedor, @PathVariable("nitProveedor") int nitProveedor){
+    public Proveedor editar(@RequestBody Proveedor proveedor, @PathVariable("nitProveedor") long nitProveedor){
         proveedor.setNitProveedor(nitProveedor);
         return proveedorService.edit(proveedor);
     }
     
     @DeleteMapping(path = {"/{nitProveedor}"})
-    public Proveedor delete(@PathVariable("nitProveedor") int nitProveedor){
+    public Proveedor delete(@PathVariable("nitProveedor") long nitProveedor){
         return proveedorService.delete(nitProveedor);
     }
 }

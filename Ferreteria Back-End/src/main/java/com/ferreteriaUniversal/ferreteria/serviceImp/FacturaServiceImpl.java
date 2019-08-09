@@ -24,7 +24,7 @@ public class FacturaServiceImpl implements FacturaService {
     }
 
     @Override
-    public Factura listId(int id) {
+    public Factura listId(long id) {
         return facturaRepositorio.findOne(id);
     }
 
@@ -39,7 +39,7 @@ public class FacturaServiceImpl implements FacturaService {
     }
 
     @Override
-    public Factura delete(int id) {
+    public Factura delete(long id) {
         Factura factura =facturaRepositorio.findOne(id);
         if (factura != null) {
             facturaRepositorio.delete(factura);

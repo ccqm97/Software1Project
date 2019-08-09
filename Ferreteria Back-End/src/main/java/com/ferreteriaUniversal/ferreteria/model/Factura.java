@@ -1,13 +1,12 @@
 package com.ferreteriaUniversal.ferreteria.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.io.Serializable;
 import java.sql.Date;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.*;
+
 import javax.persistence.Table;
 
 /**
@@ -16,33 +15,40 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "facturas")
-public class Factura {
+public class Factura implements Serializable {
 
     @Id
     @Column
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int idFactura;
+    private long idFactura;
     @Column
     private String idFacturaProveedor; 
-    @Column
-    private Date fechaFactura;
-    @ManyToOne()
+    
+    
+    @ManyToOne(cascade = CascadeType.ALL)
     private Proveedor nitProveedor;
+    
+    @OneToMany
+    @JoinColumn(name="id_factura")
+    private List<Item> items;
+    
     public Factura() {
+        this.items = new ArrayList<>();
     }
 
-    public Factura(int idFactura, String idFacturaProveedor, Date fechaFactura, Proveedor proveedor) {
+    public Factura(long idFactura, String idFacturaProveedor, Proveedor nitProveedor, List<Item> items) {
         this.idFactura = idFactura;
         this.idFacturaProveedor = idFacturaProveedor;
-        this.fechaFactura = fechaFactura;
-        this.nitProveedor = proveedor;
+        this.nitProveedor = nitProveedor;
+        this.items = items; 
     }
 
-    public int getIdFactura() {
+             
+    public long getIdFactura() {
         return idFactura;
     }
 
-    public void setIdFactura(int idFactura) {
+    public void setIdFactura(long idFactura) {
         this.idFactura = idFactura;
     }
 
@@ -54,19 +60,27 @@ public class Factura {
         this.idFacturaProveedor = idFacturaProveedor;
     }
 
-    public Date getFechaFactura() {
-        return fechaFactura;
-    }
-
-    public void setFechaFactura(Date fechaFactura) {
-        this.fechaFactura = fechaFactura;
-    }
-
     public Proveedor getProveedor() {
         return nitProveedor;
     }
 
     public void setProveedor(Proveedor proveedor) {
         this.nitProveedor = proveedor;
+    }
+
+    public Proveedor getNitProveedor() {
+        return nitProveedor;
+    }
+
+    public void setNitProveedor(Proveedor nitProveedor) {
+        this.nitProveedor = nitProveedor;
+    }
+
+    public List<Item> getItems() {
+        return items;
+    }
+
+    public void setItems(List<Item> items) {
+        this.items = items;
     }
 }

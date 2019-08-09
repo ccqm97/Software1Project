@@ -42,18 +42,18 @@ public class ControladorProducto {
     }
     
      @GetMapping(path = {"/{idProducto}"})
-    public Producto listarId(@PathVariable("idProducto") int nitProveedor){
+    public Producto listarId(@PathVariable("idProducto") long nitProveedor){
        return productoService.listID(nitProveedor);
     }
     
     @PutMapping(path ={"/{idProducto}"})
-    public Producto editar(@RequestBody Producto producto, @PathVariable("idProducto") int idProducto){
+    public Producto editar(@RequestBody Producto producto, @PathVariable("idProducto") long idProducto){
         producto.setIdProducto(idProducto);
         return productoService.edit(producto);
     }
     
     @DeleteMapping(path = {"/{idProducto}"})
-    public Producto delete(@PathVariable("idProducto") int nitProveedor){
+    public Producto delete(@PathVariable("idProducto") long nitProveedor){
         return productoService.delete(nitProveedor);
     }
 }

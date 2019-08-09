@@ -13,10 +13,10 @@ import org.springframework.data.repository.Repository;
  *
  * @author Viviana
  */
-public interface FacturaRepositorio extends Repository <Factura , Integer> {
+public interface FacturaRepositorio extends Repository <Factura , Long> {
     
     List<Factura> findAll();
-    Factura findOne(int id);
+    Factura findOne(long id);
     Factura save(Factura proveedor);
     void delete(Factura proveedor);
     
