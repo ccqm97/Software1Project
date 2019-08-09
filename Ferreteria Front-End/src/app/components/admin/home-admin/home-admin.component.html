@@ -16,14 +16,29 @@
       <button (click)="salir()"><img src="/assets/img/user.png" style="width: 40px; height: 40px">Cerrar Sesión</button>
     </nav>
   </header>
+
+  <h1 class="text-center" style="padding-left: 150px">¡Bienvenido Admin!</h1>
   <div class="row">
     <div class="col-sm-2" style="margin-left: 17px">
-      <app-structure></app-structure>
-    </div>
-    <div class="col-md-9 col-sm-10">
 
+      <app-structure></app-structure>
+
+      
     </div>
-  </div>
+    <div class="row" style="padding-left: 280px; padding-top: 170px;">
+      <div class="col">
+        <button class="btn-success" (click)="registrar()">Registrar Usuario</button>
+      </div>
+      <div class="col">
+        <button class="btn-secondary" (click)="modificar()">Modificar Usuario</button>
+      </div>
+      <div class="col">
+        <button class="btn-danger" style="width: 130px" (click)="eliminar()">Eliminar Usuario</button>
+      </div>
+    </div>
+    </div>
+
+    
 </body>
 
 </html>

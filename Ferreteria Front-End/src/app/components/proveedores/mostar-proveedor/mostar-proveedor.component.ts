@@ -14,7 +14,7 @@ import 'datatables.net';
 export class MostarProveedorComponent implements OnInit {
   
   dtOption: DataTables.Settings = {};
-  dtOption: any = {};
+  dtOption1: DataTables.Settings = {};
   proveedores: Proveedor[];
   constructor(private service: CrudProveedorService, private router: Router, private loginservice: LoginService) { }
 

@@ -33,7 +33,7 @@ const routes: Routes = [
   { path: 'restablecimiento', component: RestablecimientoComponent},
   { path: 'admin', component: HomeAdminComponent},
   { path: 'editarUsuario', component: ModificarUsuarioComponent},
-  { path: 'elimminarUsuario', component: EliminarUsuarioComponent}
+  { path: 'eliminarUsuario', component: EliminarUsuarioComponent}
 
 ];
 

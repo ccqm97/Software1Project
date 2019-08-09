@@ -19,4 +19,15 @@ export class HomeAdminComponent implements OnInit {
     this.router.navigate(['login']);
   }
 
+  registrar() {
+    this.router.navigate(['register']);
+  }
+
+  modificar() {
+    this.router.navigate(['editarUsuario']);
+  }
+
+  eliminar() {
+    this.router.navigate(['eliminarUsuario']);
+  }
 }

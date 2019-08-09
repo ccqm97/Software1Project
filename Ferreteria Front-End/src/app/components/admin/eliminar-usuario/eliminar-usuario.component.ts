@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { LoginService } from '../../../services/login.service';
 
 @Component({
   selector: 'app-eliminar-usuario',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EliminarUsuarioComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, private loginservice: LoginService) { }
+
+  password = '';
+  email = '';
 
   ngOnInit() {
+  }
+
+  salir() {
+    this.loginservice.logOut();
+    this.router.navigate(['login']);
+  }
+
+  admin() {
+    this.router.navigate(['admin']);
+  }
+
+  eliminarUser() {
+    alert('Usuario eliminado');
+    this.router.navigate([['admin']]);
   }
 
 }
