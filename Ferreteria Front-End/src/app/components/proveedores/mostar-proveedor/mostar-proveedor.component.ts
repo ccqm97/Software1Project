@@ -56,7 +56,7 @@ export class MostarProveedorComponent implements OnInit {
           processing: true
         };
         var table = (<any>$("#tableProveedores").DataTable(this.dtOption));
-      }, 100);
+      }, 300);
     });
   }
   editarProveedor(proveedor: Proveedor) {
