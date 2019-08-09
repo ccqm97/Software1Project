@@ -32,7 +32,7 @@ export class RegisterComponent implements OnInit {
   }
 
   admin() {
-    this.router.navigate(['admin']);
+    this.router.navigate(['home']);
   }
 
 }

@@ -85,7 +85,7 @@ export class MostrarProductosComponent implements OnInit {
   }
 
   admin() {
-    this.router.navigate(['admin']);
+    this.router.navigate(['register']);
   }
 
 }

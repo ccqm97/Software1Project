@@ -27,6 +27,7 @@ export class EliminarUsuarioComponent implements OnInit {
   }
 
   eliminarUser() {
+    this.loginservice.eliminarUsuario();
     alert('Usuario eliminado');
     this.router.navigate([['admin']]);
   }

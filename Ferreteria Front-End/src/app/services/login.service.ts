@@ -37,4 +37,12 @@ export class LoginService {
     this.asfAuth.auth.sendPasswordResetEmail(emailAddress);
   }
 
+  eliminarUsuario() {
+   
+  }
+
+  modificarUsuario(newPassword: string) {
+
+  }
+
 }

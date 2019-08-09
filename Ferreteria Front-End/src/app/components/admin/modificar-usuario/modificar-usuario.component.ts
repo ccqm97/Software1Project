@@ -27,8 +27,8 @@ export class ModificarUsuarioComponent implements OnInit {
   }
 
   modificarUser() {
-      alert('Usuario modificado');
-      this.router.navigate([['admin']]);
+    alert('Usuario modificado');
+    this.router.navigate([['admin']]);
   }
 
 }
