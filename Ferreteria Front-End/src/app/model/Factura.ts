@@ -1,4 +1,5 @@
 import { Proveedor } from './Proveedor';
+import { ItemFactura } from './ItemFactura';
 
 export class Factura {
 
@@ -6,4 +7,5 @@ export class Factura {
     idFacturaProveedor: string;
     fechaFactura: string;
     proveedor: Proveedor;
+    items: ItemFactura[];
 }

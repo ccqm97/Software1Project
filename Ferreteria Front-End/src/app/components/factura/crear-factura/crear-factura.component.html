@@ -26,4 +26,43 @@
       </form>
     </div>
   </div>
+  <div>
+    <h1>Items de la Factura </h1>
+      <table border="1" *ngIf="hayRegistros(); else sinarticulos" class="table table-striped table-bordered table-sm row-border hover">
+        <tr>
+          <td>Codigo</td>
+          <td>Producto</td>
+          <td>Precio Unitario</td>
+          <td>Cantidad</td>
+          <td>Opciones</td>
+
+        </tr>
+        <tr *ngFor="let item of items">
+          <td>{{item.producto.idProducto}}</td>
+          <td>{{item.producto.nombreProducto}}</td>
+          <td>{{item.precio}}</td>
+          <td>{{item.cantidad}}</td>
+          <td><button (click)="borrar(item)" class="btn btn-danger">Borrar</button>
+          <button (click)="seleccionar(item)" class="btn btn-success" >Seleccionar</button></td>
+        </tr>
+      </table>
+      <ng-template #sinarticulos><p>No hay articulos.</p></ng-template>
+      <div>
+        <p>
+          Codigo:<select class="form-control" [(ngModel)]="item.producto" name="producto">
+            <option *ngFor="let producto of productos" [(ngValue)]="producto" >
+              <span>{{"" +producto.idProducto +" "+ producto.nombreProducto}}</span>
+            </option>
+          </select>
+        </p>
+        <p>
+          cantidad:<input class="form-control" type="number" [(ngModel)]="item.cantidad" />
+        </p>
+        <p>
+          precio:<input class="form-control" type="number" [(ngModel)]="item.precio" />
+        </p>
+        <p><button (click)="agregar()" class="btn btn-success" style="margin-left: 10px">Agregar</button>
+        <button (click)="modificar()" class="btn btn-primary">Modificar</button></p>
+      </div>
+  </div>
 </div>

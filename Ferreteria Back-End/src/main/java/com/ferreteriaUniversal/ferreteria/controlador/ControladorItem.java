@@ -5,8 +5,8 @@
  */
 package com.ferreteriaUniversal.ferreteria.controlador;
 
-import com.ferreteriaUniversal.ferreteria.model.Factura;
-import com.ferreteriaUniversal.ferreteria.service.FacturaService;
+import com.ferreteriaUniversal.ferreteria.model.Item;
+import com.ferreteriaUniversal.ferreteria.service.ItemService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,35 +24,35 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 @RestController
-@RequestMapping({"/facturas"})
-public class ControladorFacturas {
+@RequestMapping({"/itemsFactura"})
+public class ControladorItem {
     
     @Autowired
-    FacturaService facturaService;
+    ItemService itemService;
     
-    @GetMapping
-    public List<Factura> listar(){
-       return facturaService.list();
+     @GetMapping
+    public List<Item> listar(){
+       return itemService.list();
     }
   
     @PostMapping
-    public Factura agregar(@RequestBody Factura factura){
-        return facturaService.add(factura);
+    public Item agregar(@RequestBody Item item){
+        return itemService.add(item);
     }
     
-     @GetMapping(path = {"/{idFactura}"})
-    public Factura listarId(@PathVariable("idFactura") long idFactura){
-       return facturaService.listId(idFactura);
+     @GetMapping(path = {"/{idItem}"})
+    public Item listarId(@PathVariable("idItem") long idItem){
+       return itemService.listId(idItem);
     }
     
-    @PutMapping(path ={"/{idFactura}"})
-    public Factura editar(@RequestBody Factura factura, @PathVariable("idFactura") long idFactura){
-        factura.setIdFactura(idFactura);
-        return facturaService.edit(factura);
-    }
+   // @PutMapping(path ={"/{idFactura}"})
+    //public Item editar(@RequestBody Item item, @PathVariable("idFactura") long idItem){
+       
+    //}
     
     @DeleteMapping(path = {"/{idFactura}"})
-    public Factura delete(@PathVariable("idFactura") long idFactura){
-        return facturaService.delete(idFactura);
+    public Item delete(@PathVariable("idFactura") long idFactura){
+        return itemService.delete(idFactura);
     }
+    
 }

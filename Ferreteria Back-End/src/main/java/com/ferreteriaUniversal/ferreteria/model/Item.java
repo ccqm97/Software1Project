@@ -38,8 +38,6 @@ public class Item implements Serializable {
     private int cantidad;
     @Column
     private int valorUnitario;
-    @Column
-    private boolean devolucion;
 
     public Item() {
     }

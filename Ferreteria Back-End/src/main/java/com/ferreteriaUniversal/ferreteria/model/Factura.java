@@ -25,7 +25,7 @@ public class Factura implements Serializable {
     private String idFacturaProveedor; 
     
     
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     private Proveedor nitProveedor;
     
     @OneToMany
