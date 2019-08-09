@@ -10,66 +10,64 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "item_producto")
 public class ItemProducto {
-	
-	@Id
-	@Column
-	@GeneratedValue(strategy = GenerationType.AUTO)        
-	private int idItem;
-	@Column
-	private String codigoProducto;
-	@Column
-	private int idProveedor;
-	@Column
-	private int precioProducto;
 
-	public ItemProducto() {
-	}
+    @Id
+    @Column
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long idItem;
+    @Column
+    private long idProducto;
+    @Column
+    private long idProveedor;
+    @Column
+    private long precioProducto;
 
-	public ItemProducto(int idItem, String codigoProducto, int idProveedor, int precioProducto) {
-		this.idItem = idItem;
-		this.codigoProducto = codigoProducto;
-		this.idProveedor = idProveedor;
-		this.precioProducto = precioProducto;
-	}
-	
-	public ItemProducto(String codigoProducto, int idProveedor, int precioProducto) {
-		this.codigoProducto = codigoProducto;
-		this.idProveedor = idProveedor;
-		this.precioProducto = precioProducto;
-	}
+    public ItemProducto() {
+    }
 
-	public int getIdItem() {
-		return idItem;
-	}
+    public ItemProducto(long idItem, long idProducto, long idProveedor, long precioProducto) {
+        this.idItem = idItem;
+        this.idProducto = idProducto;
+        this.idProveedor = idProveedor;
+        this.precioProducto = precioProducto;
+    }
 
-	public void setIdItem(int idItem) {
-		this.idItem = idItem;
-	}
+    public ItemProducto(long idProducto, long idProveedor, long precioProducto) {
+        this.idProducto = idProducto;
+        this.idProveedor = idProveedor;
+        this.precioProducto = precioProducto;
+    }
 
-	public String getCodigoProducto() {
-		return codigoProducto;
-	}
+    public long getIdItem() {
+        return idItem;
+    }
 
-	public void setCodigoProducto(String codigoProducto) {
-		this.codigoProducto = codigoProducto;
-	}
+    public void setIdItem(long idItem) {
+        this.idItem = idItem;
+    }
 
-	public int getIdProveedor() {
-		return idProveedor;
-	}
+    public long getIdProducto() {
+        return idProducto;
+    }
 
-	public void setIdProveedor(int idProveedor) {
-		this.idProveedor = idProveedor;
-	}
+    public void setIdProducto(long idProducto) {
+        this.idProducto = idProducto;
+    }
 
-	public int getPrecioProducto() {
-		return precioProducto;
-	}
+    public long getIdProveedor() {
+        return idProveedor;
+    }
 
-	public void setPrecioProducto(int precioProducto) {
-		this.precioProducto = precioProducto;
-	}
-	
-	
+    public void setIdProveedor(long idProveedor) {
+        this.idProveedor = idProveedor;
+    }
+
+    public long getPrecioProducto() {
+        return precioProducto;
+    }
+
+    public void setPrecioProducto(long precioProducto) {
+        this.precioProducto = precioProducto;
+    }
 
 }

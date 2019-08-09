@@ -20,7 +20,7 @@ public class ItemProductoServiceImpl implements ItemProductoService {
 	}
 
 	@Override
-	public ItemProducto listID(int id) {
+	public ItemProducto listID(long id) {
 		return itemProductoRepositorio.findOne(id);
 	}
 
@@ -35,7 +35,7 @@ public class ItemProductoServiceImpl implements ItemProductoService {
 	}
 
 	@Override
-	public ItemProducto delete(int id) {
+	public ItemProducto delete(long id) {
 		ItemProducto itemProducto = itemProductoRepositorio.findOne(id);
 		if (itemProducto!=null) {
 			itemProductoRepositorio.delete(itemProducto);

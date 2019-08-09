@@ -35,33 +35,33 @@ public class Proveedor implements java.io.Serializable {
     @OneToMany
     @JsonIgnore
     @JoinColumn(name = "nit_proveedor")
-    private List<ProductoProveedor> productoProveedores;
+    private List<ItemProducto> itemsProducto;
 
     public Proveedor() {
-        this.productoProveedores = new ArrayList<ProductoProveedor>();
+        this.itemsProducto = new ArrayList<ItemProducto>();
 
     }
 
     public Proveedor(long nitProveedor) {
-        this.productoProveedores = new ArrayList<ProductoProveedor>();
+        this.itemsProducto = new ArrayList<ItemProducto>();
 
         this.nitProveedor = nitProveedor;
     }
 
     public Proveedor(long nitProveedor, String nombreProveedor, String correoProveedor, long telefonoProveedor) {
-        this.productoProveedores = new ArrayList<ProductoProveedor>();
+        this.itemsProducto = new ArrayList<ItemProducto>();
         this.nitProveedor = nitProveedor;
         this.nombreProveedor = nombreProveedor;
         this.correoProveedor = correoProveedor;
         this.telefonoProveedor = telefonoProveedor;
     }
 
-    public Proveedor(long nitProveedor, String nombreProveedor, String correoProveedor, long telefonoProveedor, List<ProductoProveedor> productoProveedores) {
+    public Proveedor(long nitProveedor, String nombreProveedor, String correoProveedor, long telefonoProveedor, List<ItemProducto> productoProveedores) {
         this.nitProveedor = nitProveedor;
         this.nombreProveedor = nombreProveedor;
         this.correoProveedor = correoProveedor;
         this.telefonoProveedor = telefonoProveedor;
-        this.productoProveedores = productoProveedores;
+        this.itemsProducto = productoProveedores;
     }
 
     
@@ -97,11 +97,11 @@ public class Proveedor implements java.io.Serializable {
         this.telefonoProveedor = telefonoProveedor;
     }
 
-    public List<ProductoProveedor> getProductoProveedores() {
-        return productoProveedores;
+    public List<ItemProducto> getItemsProducto() {
+        return itemsProducto;
     }
 
-    public void setProductoProveedores(List<ProductoProveedor> productoProveedores) {
-        this.productoProveedores = productoProveedores;
+    public void setItemsProducto(List<ItemProducto> itemsProducto) {
+        this.itemsProducto = itemsProducto;
     }
 }

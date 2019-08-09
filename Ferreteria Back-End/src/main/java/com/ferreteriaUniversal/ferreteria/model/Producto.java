@@ -23,9 +23,7 @@ public class Producto {
 	@Id
 	@Column
 	@GeneratedValue(strategy = GenerationType.AUTO)        
-	private int idProducto;
-	@Column
-	private String codigoProducto;
+	private long idProducto;
 	@Column
 	private String nombreProducto;
 	@Column
@@ -34,50 +32,36 @@ public class Producto {
 	public Producto() {
 	}
 
-	public Producto(int idProducto,String codigoProducto, String nombreProducto, String descripcion) {
-		this.idProducto = idProducto;
-		this.codigoProducto = codigoProducto;
-		this.nombreProducto = nombreProducto;
-		this.descripcion = descripcion;
-	}
+    public Producto(long idProducto, String nombreProducto, String descripcion) {
+        this.idProducto = idProducto;
+        this.nombreProducto = nombreProducto;
+        this.descripcion = descripcion;
+    }
+        
+    public long getIdProducto() {
+        return idProducto;
+    }
 
-	public Producto(String codigoProducto, String nombreProducto, String descripcion) {
-		this.codigoProducto = codigoProducto;
-		this.nombreProducto = nombreProducto;
-		this.descripcion = descripcion;
-	}
+    public void setIdProducto(long idProducto) {
+        this.idProducto = idProducto;
+    }
 
-	public int getIdProducto() {
-		return idProducto;
-	}
+    public String getNombreProducto() {
+        return nombreProducto;
+    }
 
-	public void setIdProducto(int idProducto) {
-		this.idProducto = idProducto;
-	}
-	
-	public String getCodigoProducto() {
-		return codigoProducto;
-	}
+    public void setNombreProducto(String nombreProducto) {
+        this.nombreProducto = nombreProducto;
+    }
 
-	public void setCodigoProducto(String codigoProducto) {
-		this.codigoProducto = codigoProducto;
-	}
-
-	public String getNombreProducto() {
-		return nombreProducto;
-	}
-
-	public void setNombreProducto(String nombreProducto) {
-		this.nombreProducto = nombreProducto;
-	}
-
-	public String getDescripcion() {
-		return descripcion;
-	}
+    public String getDescripcion() {
+        return descripcion;
+    }
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-
-   
+        
+      
+	   
 }

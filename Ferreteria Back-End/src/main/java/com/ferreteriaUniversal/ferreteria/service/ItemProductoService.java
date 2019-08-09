@@ -6,9 +6,9 @@ import com.ferreteriaUniversal.ferreteria.model.ItemProducto;
 
 public interface ItemProductoService {
 	List<ItemProducto> list();
-	ItemProducto listID(int id);
+	ItemProducto listID(long id);
 	ItemProducto add(ItemProducto itemProducto);
 	ItemProducto edit(ItemProducto itemProducto);
-	ItemProducto delete(int id);
+	ItemProducto delete(long id);
 
 }
