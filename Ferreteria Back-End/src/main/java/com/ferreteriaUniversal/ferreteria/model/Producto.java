@@ -5,16 +5,11 @@
  */
 package com.ferreteriaUniversal.ferreteria.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import java.util.ArrayList;
-import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -24,93 +19,65 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "productos")
 public class Producto {
-    
-    @Id
-    @Column
-    @GeneratedValue(strategy = GenerationType.AUTO)        
-     private long idProducto;
-    @Column
-     private String nombreProducto;
-    @Column
-     private String descripcion;
-    
-    @OneToMany
-    @JsonIgnore
-    @JoinColumn(name="id_producto")
-    private List<Item> items;
-    
-    @OneToMany
-    @JoinColumn(name="id_producto")
-    private List<ProductoProveedor> productoProveedors;
 
-    public Producto() {
-        productoProveedors= new ArrayList<>();
-    }
-    
-    public Producto(long idProducto, String nombreProducto, String descripcion, List<Item> items) {
-        this.idProducto = idProducto;
-        this.nombreProducto = nombreProducto;
-        this.descripcion = descripcion;
-        this.items = items;
-        productoProveedors = new ArrayList<>();
+	@Id
+	@Column
+	@GeneratedValue(strategy = GenerationType.AUTO)        
+	private int idProducto;
+	@Column
+	private String codigoProducto;
+	@Column
+	private String nombreProducto;
+	@Column
+	private String descripcion;
 
-    }
-   public Producto(long idProducto, String nombreProducto, String descripcion) {
-        this.idProducto = idProducto;
-        this.nombreProducto = nombreProducto;
-        this.descripcion = descripcion;
-        this.items = new ArrayList<>();
-        productoProveedors = new ArrayList<>();
+	public Producto() {
+	}
 
-    }
+	public Producto(int idProducto,String codigoProducto, String nombreProducto, String descripcion) {
+		this.idProducto = idProducto;
+		this.codigoProducto = codigoProducto;
+		this.nombreProducto = nombreProducto;
+		this.descripcion = descripcion;
+	}
 
-    public Producto(long idProducto, String nombreProducto, String descripcion, List<Item> items, List<ProductoProveedor> productoProveedors) {
-        this.idProducto = idProducto;
-        this.nombreProducto = nombreProducto;
-        this.descripcion = descripcion;
-        this.items = items;
-        this.productoProveedors = productoProveedors;
-    }
-   
-   
-    
-    public long getIdProducto() {
-        return idProducto;
-    }
+	public Producto(String codigoProducto, String nombreProducto, String descripcion) {
+		this.codigoProducto = codigoProducto;
+		this.nombreProducto = nombreProducto;
+		this.descripcion = descripcion;
+	}
 
-    public void setIdProducto(long idProducto) {
-        this.idProducto = idProducto;
-    }
+	public int getIdProducto() {
+		return idProducto;
+	}
 
-    public String getNombreProducto() {
-        return nombreProducto;
-    }
+	public void setIdProducto(int idProducto) {
+		this.idProducto = idProducto;
+	}
+	
+	public String getCodigoProducto() {
+		return codigoProducto;
+	}
 
-    public void setNombreProducto(String nombreProducto) {
-        this.nombreProducto = nombreProducto;
-    }
+	public void setCodigoProducto(String codigoProducto) {
+		this.codigoProducto = codigoProducto;
+	}
 
-    public String getDescripcion() {
-        return descripcion;
-    }
+	public String getNombreProducto() {
+		return nombreProducto;
+	}
+
+	public void setNombreProducto(String nombreProducto) {
+		this.nombreProducto = nombreProducto;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
 
-    public List<Item> getItems() {
-        return items;
-    }
-
-    public void setItems(List<Item> items) {
-        this.items = items;
-    }
-
-    public List<ProductoProveedor> getProductoProveedors() {
-        return productoProveedors;
-    }
-
-    public void setProductoProveedors(List<ProductoProveedor> productoProveedors) {
-        this.productoProveedors = productoProveedors;
-    } 
+   
 }

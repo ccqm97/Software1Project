@@ -5,6 +5,15 @@
     </div>
     <div class="card-body">
       <form [formGroup]="prod" (ngSubmit)="guardarProducto()">
+
+        <div class="form-group">
+          <label for="">Codigo del Producto</label>
+          <input id="codigoProd" [(ngModel)]="producto.codigoProducto" placeholder="Escriba el codigo del producto" name="nombreProveedor" type="text" formControlName="codigoProd" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.codigoProd.errors }">
+          <div *ngIf="submitted && f.codigoProd.errors" class="invalid-feedback">
+            <div *ngIf="f.codigoProd.errors.required">Por favor, ingrese el codigo del producto</div>
+          </div>
+        </div>
+
         <div class="form-group">
           <label for="">Nombre del Producto</label>
           <input [(ngModel)]="producto.nombreProducto" placeholder="Escriba el nombre del producto" name="nombreProveedor" type="text" formControlName="nombreProd" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nombreProd.errors }">
@@ -13,7 +22,7 @@
           </div>
         </div>
         <div class="form-group">
-          <label for="">Descripcion del Producto</label>
+          <label for="">Descripción del Producto</label>
           <input [(ngModel)]="producto.descripcion" placeholder="Escriba la descripcion del producto" name="correoProveedor" type="text" formControlName="descProd" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.descProd.errors }">
           <div *ngIf="submitted && f.descProd.errors" class="invalid-feedback">
             <div *ngIf="f.descProd.errors.required">Por favor, ingrese la descripción del producto</div>
@@ -21,22 +30,23 @@
         </div>
         <div class="form-group">
             <label for="">Proveedor</label>
-            <select id="ProveedorProducto" class="form-control" [(ngModel)]="itemProducto.proveedor" placeholder="Escoga un proveedor" name="proveedor">
-              <option *ngFor="let proveedor of proveedores" [(ngValue)]="proveedor" >
-                <span>{{proveedor.nombreProveedor}}</span>
-              </option>
+            <select id="ProveedorProducto" class="form-control" formControlName="proveedorItemProd" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.proveedorItemProd.errors }">
+                <option value="">Elija un proveedor</option>
             </select>
+            <div *ngIf="submitted && f.proveedorItemProd.errors" class="invalid-feedback">
+                <div *ngIf="f.proveedorItemProd.errors.required">Por favor, escoja un proveedor</div>
+              </div>
           </div> 
 
           <div class="form-group">
               <label for="">Precio</label>
-              <input id="precioProducto" [(ngModel)]="itemProducto.precio" placeholder="Escriba el precio del producto" name="precio" type="text" formControlName="precio" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.precio.errors }">
+              <input id="precioProducto" [(ngModel)]="itemProducto.precioProducto" placeholder="Escriba el precio del producto" name="precio" type="text" formControlName="precio" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.precio.errors }">
               <div *ngIf="submitted && f.precio.errors" class="invalid-feedback">
                 <div *ngIf="f.precio.errors.required">Por favor, ingrese el precio del producto</div>
               </div>
             </div>
               <br>
-            <button type="button" class="btn btn-success gu table-add"> Agregar  </button>
+            <button id="btnAdd"  (click)="agregarItem()" type="button" class="btn btn-success gu table-add"> Agregar  </button>
                
                 <table id= "table" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
                   <thead>

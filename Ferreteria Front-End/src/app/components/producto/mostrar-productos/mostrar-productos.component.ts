@@ -55,7 +55,7 @@ export class MostrarProductosComponent implements OnInit {
           processing: true
         };
         var table = (<any>$("#tableProductos").DataTable(this.dtOption));
-      }, 100);
+      }, 300);
     });
   }
   editarProducto(producto:Producto){

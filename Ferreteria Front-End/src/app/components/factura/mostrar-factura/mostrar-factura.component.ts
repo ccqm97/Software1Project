@@ -56,7 +56,7 @@ export class MostrarFacturaComponent implements OnInit {
           processing: true
         };
         var table = (<any>$("#tableFactura").DataTable(this.dtOption));
-      }, 100);
+      }, 300);
     });
   }
   editarFactura(factura:Factura){

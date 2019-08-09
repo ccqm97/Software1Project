@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AngularDualListBoxModule } from 'angular-dual-listbox';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -29,6 +28,7 @@ import { RegisterComponent } from './components/admin/register/register.componen
 import { ModificarUsuarioComponent } from './components/admin/modificar-usuario/modificar-usuario.component';
 import { EliminarUsuarioComponent } from './components/admin/eliminar-usuario/eliminar-usuario.component';
 import { HomeAdminComponent } from './components/admin/home-admin/home-admin.component';
+import { CrudItemProductoService } from './services/crud-item-producto.service';
 
 
 const config = {
@@ -62,16 +62,17 @@ const config = {
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     AngularFireAuthModule,
     AngularFireModule.initializeApp(config),
     AngularDualListBoxModule ,
     FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [CrudService,
     CrudProveedorService,
     CrudProductoService,
+    CrudItemProductoService,
     CrudFacturaService],
   bootstrap: [AppComponent]
 })
